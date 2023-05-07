@@ -12,29 +12,29 @@ int main(void)
         valor = get_float("Valor: ");
     }
 
-    while (valor >= 25)
+    do
     {
-        valor -= 25;
-        coins += 1;
+        if (cents >= 25)
+        {
+            cents -= 25;
+            coins += 1;
+        }
+        else if (cents >= 10)
+        {
+            cents -= 10;
+            coins += 1;
+        }
+        else if (cents >= 5)
+        {
+            cents -= 5;
+            coins += 1;
+        }
+        else
+        {
+            cents -= 1;
+            coins += 1;
+        }
     }
-
-    while (valor >= 10)
-    {
-        valor -= 10;
-        coins += 1;
-    }
-
-    while (valor >= 05)
-    {
-        valor -= 05;
-        coins += 1;
-        printf("%i\n", coins); // - 3
-    }
-    printf("%.2f\n", valor);
-    while (valor >= 01)
-    {
-        valor = 01;
-        coins += 1;
-    }
+    while (cents > 0);
     printf("%i\n", coins);
 }
