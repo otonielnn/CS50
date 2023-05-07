@@ -18,8 +18,10 @@ int main(void)
      // TODO: Calcule o número de anos até o limite
      while (start < end)
      {
-        start += start / 3;
-        start -= start / 4;
+        int born = start / 3;
+        int died = start / 4;
+        start += born;
+        start -= died;
         years += 1;
         printf("%i\n", start);
      }
