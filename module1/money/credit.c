@@ -9,7 +9,7 @@ int main(void)
     {
         card = get_float("Write your credit card number: ");
     }
-    int digit = (int)log1(card)+ 1;
+    int digit = (int)log10(card)+1;
     int divisor = (long)pow(10, digit - 2);
     int first_two_digits = (int)floor(card/divisor);
     int n1, n2, soma, resultado = 0;
@@ -28,9 +28,9 @@ int main(void)
         }
         soma = n1 + n2;
         card /= 10;
-        resultado += soma
+        resultado += soma;
     }
-    while (cartao > 0);
+    while (card > 0);
 
     resultado %= 10;
 
