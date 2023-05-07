@@ -5,7 +5,7 @@
 int main(void)
 {
     float valor = -1;
-    int total_coins = 0;
+    int coins = 0;
 
     while (valor < 0)
     {
@@ -15,27 +15,27 @@ int main(void)
     while (valor >= 0.25)
     {
         valor -= 0.25;
-        total_coins += 1;
+        coins += 1;
     }
 
     while (valor >= 0.10)
     {
         valor -= 0.10;
-        total_coins += 1;
+        coins += 1;
     }
 
     while (valor >= 0.05)
     {
         valor -= 0.05;
-        total_coins += 1;
-        printf("%i\n", total_coins); // - 3
+        coins += 1;
+        printf("%i\n", coins); // - 3
     }
     printf("%f\n", valor);
     while (valor >= 0.01)
     {
         valor -= 0.01;
-        total_coins += 1;
+        coins += 1;
     }
     printf("%f\n", valor);
-    printf("%i\n", total_coins);
+    printf("%i\n", coins);
 }
