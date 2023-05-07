@@ -1,26 +1,41 @@
- float n = get_positive_float();
-    int cents = round(n * 100), coins = 0;
-    // Passing on money owed
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
+
+int main(void)
+{
+    float valor = -1;
+    int cents = round(valor * 100), coins = 0;
+
+    while (valor < 0)
+    {
+        valor = get_float("Valor: ");
+    }
+    printf("%i\n", cents);
     do
     {
         if (cents >= 25)
         {
             cents -= 25;
+            coins += 1;
         }
         else if (cents >= 10)
         {
             cents -= 10;
+            coins += 1;
         }
         else if (cents >= 5)
         {
             cents -= 5;
+            coins += 1;
         }
         else
         {
             cents -= 1;
+            coins += 1;
         }
-        coins++;
+        printf("%i\n", cents);
     }
     while (cents > 0);
-    // Show amount of coins
-    printf("coins: %i\n", coins);
+    printf("%i\n", coins);
+}
