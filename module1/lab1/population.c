@@ -18,7 +18,7 @@ int main(void)
     {
         end = get_int("End size: ");
     }
-    while (end <= start);
+    while (end < start);
     // TODO: Calcule o número de anos até o limite
     while (start < end)
     {
