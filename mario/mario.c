@@ -11,7 +11,7 @@ int main(void)
 
 void torre(int n)
 {
-    for (int l = 0; l < n; l++)
+    for (int l = 1; l <= n; l++)
     {
         for (int d = n; d > l + 1; d--)
         {
@@ -21,7 +21,7 @@ void torre(int n)
             }
         }
 
-        for (int h = 0; h < l; h++)
+        for (int h = 1; h <= l; h++)
         {
             printf("#");
         }
