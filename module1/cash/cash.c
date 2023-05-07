@@ -24,18 +24,18 @@ int main(void)
         total_coins += 1;
     }
 
-    while (valor >+ 0.05)
+    while (valor >= 0.05)
     {
         valor -= 0.05;
         total_coins += 1;
         printf("%i\n", total_coins); // - 3
     }
-
+    printf("%f\n", valor);
     while (valor >= 0.01)
     {
         valor -= 0.01;
         total_coins += 1;
-        printf("%i\n", total_coins); // - 3
     }
+    printf("%f\n", valor);
     printf("%i\n", total_coins);
 }
