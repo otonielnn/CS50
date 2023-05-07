@@ -1,5 +1,7 @@
 {
-    "extensions": [
+  "customizations": {
+    "vscode": {
+      "extensions": [
         "/opt/cs50/extensions/cs50-0.0.1.vsix",
         "/opt/cs50/extensions/phpliteadmin-0.0.1.vsix",
         "cs50.ddb50",
@@ -10,34 +12,20 @@
         "ms-python.python",
         "ms-vscode.cpptools",
         "ms-vscode.hexeditor",
-        "ms-vsliveshare.vsliveshare-pack",
+        "ms-vsliveshare.vsliveshare",
         "redhat.java",
         "tomoki1207.pdf",
         "vscjava.vscode-java-debug",
         "vsls-contrib.gitdoc"
-    ],
-    "forwardPorts": [
-        5000,
-        5900,
-        6081,
-        8080,
-        8082
-    ],
-    "image": "ghcr.io/cs50/codespace:de43cbdda86bec94fc6ffe89eb1fb2cea020e80c",
-    "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
-    "remoteEnv": {
-        "CS50_GH_USER": "${localEnv:GITHUB_USER}",
-        "GH_TOKEN": "${localEnv:CS50_TOKEN}",
-        "TZ": "${localEnv:CS50_TZ}"
-    },
-    "settings": {
-        "C_Cpp.autocomplete": "Disabled",
-        "C_Cpp.codeFolding": "Disabled",
+      ],
+      "settings": {
+        "C_Cpp.autocomplete": "disabled",
+        "C_Cpp.codeFolding": "disabled",
         "C_Cpp.debugShortcut": false,
         "C_Cpp.dimInactiveRegions": false,
         "C_Cpp.doxygen.generateOnType": false,
-        "C_Cpp.enhancedColorization": "Enabled",
-        "C_Cpp.errorSquiggles": "Disabled",
+        "C_Cpp.enhancedColorization": "enabled",
+        "C_Cpp.errorSquiggles": "disabled",
         "breadcrumbs.enabled": false,
         "editor.autoClosingQuotes": "never",
         "editor.colorDecorators": false,
@@ -52,42 +40,42 @@
         "editor.occurrencesHighlight": false,
         "editor.parameterHints.enabled": false,
         "editor.quickSuggestions": {
-            "comments": "off",
-            "other": "off",
-            "strings": "off"
+          "comments": "off",
+          "other": "off",
+          "strings": "off"
         },
         "editor.renderWhitespace": "selection",
         "editor.selectionHighlight": false,
         "editor.semanticTokenColorCustomizations": {
-            "[GitHub Dark Default]": {
-                "rules": {
-                    "type": "#FF7E76"
-                }
-            },
-            "[GitHub Light Default]": {
-                "rules": {
-                    "type": "#D2343F"
-                }
+          "[GitHub Dark Default]": {
+            "rules": {
+              "type": "#FF7E76"
             }
+          },
+          "[GitHub Light Default]": {
+            "rules": {
+              "type": "#D2343F"
+            }
+          }
         },
         "editor.suggestOnTriggerCharacters": false,
         "explorer.compactFolders": false,
         "extension-uninstaller.uninstall": [
-            "github.copilot",
-            "github.copilot-nightly",
-            "ms-toolsai.vscode-jupyter-cell-tags",
-            "tabnine.tabnine-vscode"
+          "github.copilot",
+          "github.copilot-nightly",
+          "ms-toolsai.vscode-jupyter-cell-tags",
+          "tabnine.tabnine-vscode"
         ],
         "extensions.ignoreRecommendations": true,
         "files.autoSave": "afterDelay",
         "files.exclude": {
-            "**/.*": true
+          "**/.*": true
         },
         "files.trimTrailingWhitespace": true,
         "files.watcherExclude": {
-            "**/.git/objects/**": true,
-            "**/.git/subtree-cache/**": true,
-            "**/node_modules/*/**": true
+          "**/.git/objects/**": true,
+          "**/.git/subtree-cache/**": true,
+          "**/node_modules/*/**": true
         },
         "git.autofetch": true,
         "git.decorations.enabled": false,
@@ -101,11 +89,11 @@
         "github.gitAuthentication": true,
         "html.suggest.html5": false,
         "java.configuration.runtimes": [
-            {
-                "default": true,
-                "name": "JavaSE-18",
-                "path": "/opt/jdk-18.0.2.1"
-            }
+          {
+            "default": true,
+            "name": "JavaSE-18",
+            "path": "/opt/jdk-19.0.2"
+          }
         ],
         "java.debug.settings.enableRunDebugCodeLens": false,
         "java.inlayHints.parameterNames.enabled": "none",
@@ -114,24 +102,25 @@
         "javascript.validate.enable": false,
         "problems.decorations.enabled": false,
         "remote.otherPortsAttributes": {
-            "onAutoForward": "silent"
+          "onAutoForward": "silent"
         },
         "scm.countBadge": "off",
         "terminal.integrated.commandsToSkipShell": [
-            "workbench.action.toggleSidebarVisibility"
+          "workbench.action.toggleSidebarVisibility"
         ],
         "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.enableBell": true,
         "terminal.integrated.gpuAcceleration": "off",
         "terminal.integrated.persistentSessionReviveProcess": "never",
         "terminal.integrated.profiles.linux": {
-            "JavaScript Debug Terminal": null,
-            "bash": {
-                "args": [
-                    "--login"
-                ],
-                "icon": "terminal",
-                "path": "bash"
-            }
+          "JavaScript Debug Terminal": null,
+          "bash": {
+            "args": [
+              "--login"
+            ],
+            "icon": "terminal",
+            "path": "bash"
+          }
         },
         "terminal.integrated.sendKeybindingsToShell": true,
         "terminal.integrated.shellIntegration.decorationsEnabled": "never",
@@ -141,41 +130,40 @@
         "window.autoDetectColorScheme": true,
         "window.commandCenter": false,
         "workbench.colorCustomizations": {
-            "[GitHub Dark Default]": {
-                "activityBar.background": "#000",
-                "editor.background": "#000",
-                "editor.lineHighlightBackground": "#0000",
-                "editor.lineHighlightBorder": "#0000",
-                "editorWhitespace.foreground": "#59A5FC",
-                "panel.background": "#000",
-                "sideBar.background": "#000",
-                "terminal.background": "#000",
-                "terminal.foreground": "#fff"
-            },
-            "[GitHub Light Default]": {
-                "activityBar.background": "#fff",
-                "editor.background": "#fff",
-                "editor.lineHighlightBackground": "#fff0",
-                "editor.lineHighlightBorder": "#fff0",
-                "editorWhitespace.foreground": "#1167D7",
-                "panel.background": "#fff",
-                "sideBar.background": "#fff",
-                "terminal.background": "#fff",
-                "terminal.foreground": "#000"
-            },
+          "[GitHub Dark Default]": {
+            "activityBar.background": "#000",
+            "editor.background": "#000",
+            "editor.lineHighlightBackground": "#0000",
             "editor.lineHighlightBorder": "#0000",
-            "editorError.foreground": "#0000",
-            "editorGutter.addedBackground": "#0000",
-            "editorGutter.deletedBackground": "#0000",
-            "editorGutter.modifiedBackground": "#0000",
-            "editorWarning.foreground": "#0000"
+            "editorWhitespace.foreground": "#59A5FC",
+            "panel.background": "#000",
+            "sideBar.background": "#000",
+            "terminal.background": "#000",
+            "terminal.foreground": "#fff"
+          },
+          "[GitHub Light Default]": {
+            "activityBar.background": "#fff",
+            "editor.background": "#fff",
+            "editor.lineHighlightBackground": "#fff0",
+            "editor.lineHighlightBorder": "#fff0",
+            "editorWhitespace.foreground": "#1167D7",
+            "panel.background": "#fff",
+            "sideBar.background": "#fff",
+            "terminal.background": "#fff",
+            "terminal.foreground": "#000"
+          },
+          "editor.lineHighlightBorder": "#0000",
+          "editorError.foreground": "#0000",
+          "editorGutter.addedBackground": "#0000",
+          "editorGutter.deletedBackground": "#0000",
+          "editorGutter.modifiedBackground": "#0000",
+          "editorWarning.foreground": "#0000"
         },
         "workbench.editor.closeOnFileDelete": true,
         "workbench.editor.enablePreview": false,
         "workbench.editor.untitled.hint": "hidden",
         "workbench.editorAssociations": {
-            "*.wav": "vscode.audioPreview",
-            "README.md": "lab50.editor"
+          "*.wav": "vscode.audioPreview"
         },
         "workbench.iconTheme": "vs-minimal",
         "workbench.preferredDarkColorTheme": "GitHub Dark Default",
@@ -184,5 +172,24 @@
         "workbench.statusBar.visible": false,
         "workbench.tips.enabled": false,
         "workbench.welcomePage.walkthroughs.openOnInstall": false
+      }
     }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [
+    5000,
+    5900,
+    6081,
+    8080,
+    8082
+  ],
+  "image": "ghcr.io/cs50/codespace:c87bdc12fa9251dc50e041332112b37cd8a74c06",
+  "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
+  "remoteEnv": {
+    "CS50_GH_USER": "${localEnv:GITHUB_USER}",
+    "GH_TOKEN": "${localEnv:CS50_TOKEN}",
+    "TZ": "${localEnv:CS50_TZ}"
+  }
 }
