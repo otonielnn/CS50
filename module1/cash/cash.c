@@ -5,13 +5,14 @@
 int main(void)
 {
     float valor = -1;
-    int cents = round(valor * 100), coins = 0;
 
     while (valor < 0)
     {
         valor = get_float("Valor: ");
     }
-    printf("%i\n", cents);
+
+    int cents = round(valor * 100), coins = 0;
+
     do
     {
         if (cents >= 25)
