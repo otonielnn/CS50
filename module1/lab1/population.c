@@ -9,12 +9,15 @@ int main(void)
       {
         start = get_int("Start size: ");
       }
-      while (start < 1);
+      while (start < 9);
 
 
      // TODO: Solicite o valor final ao usuário
-      end = get_int("End size: ");
-
+     do
+     {
+        end = get_int("End size: ");
+     }
+     while (end <= start);
      // TODO: Calcule o número de anos até o limite
      while (start < end)
      {
@@ -23,7 +26,6 @@ int main(void)
         start += born;
         start -= died;
         years += 1;
-        printf("%i\n", start);
      }
 
      // TODO: Imprima o número de anos
