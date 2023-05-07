@@ -33,9 +33,9 @@ int main(void)
     printf("%f\n", valor);
     while (valor < 0.01)
     {
-        valor -= 0.01;
-        coins += 1;
         printf("%f\n", valor);
+        valor = 0.01;
+        coins += 1;
     }
     printf("%f\n", valor);
     printf("%i\n", coins);
