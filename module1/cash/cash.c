@@ -5,7 +5,7 @@
 int main(void)
 {
     float valor = -1;
-    int coins = 0;
+    int cents = round(valor * 100), coins = 0;
 
     while (valor < 0)
     {
