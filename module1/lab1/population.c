@@ -21,6 +21,7 @@ int main(void)
         start += start / 3;
         start -= start / 4;
         years += 1;
+        printf("%i\n", start);
      }
 
      // TODO: Imprima o número de anos
