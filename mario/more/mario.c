@@ -32,11 +32,7 @@ void torre(int n)
 
         if (l != 0)
         {
-            printf("..");
-        }
-
-        for (int d = n; d > l; d--)
-        {
+            printf("  ");
         }
 
         for (int h = 1; h <= l; h++)
