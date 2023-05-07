@@ -29,6 +29,21 @@ void torre(int n)
         {
             printf("#");
         }
+
+        if (l != 0)
+        {
+            printf("..");
+        }
+
+        for (int d = n; d > l; d--)
+        {
+        }
+
+        for (int h = 1; h <= l; h++)
+        {
+            printf("#");
+        }
+
         printf("\n");
     }
 }
