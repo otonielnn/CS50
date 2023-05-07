@@ -6,7 +6,7 @@ void torre(int n);
 int main(void)
 {
     int n = 0;
-    while (n < 1 || n > 9)
+    while (n < 1 || n > 8)
     {
         n = get_int("Height: ");
     }
