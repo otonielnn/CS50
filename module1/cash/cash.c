@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <cs50.h>
-//25, 10, 5 ,1
+#include <math.h>
 
 int main(void)
 {
