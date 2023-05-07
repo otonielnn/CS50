@@ -11,7 +11,7 @@ int main(void)
     {
         valor = get_float("Valor: ");
     }
-
+    printf("%i\n", cents);
     do
     {
         if (cents >= 25)
@@ -34,6 +34,7 @@ int main(void)
             cents -= 1;
             coins += 1;
         }
+        printf("%i\n", cents);
     }
     while (cents > 0);
     printf("%i\n", coins);
