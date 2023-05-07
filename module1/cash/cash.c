@@ -3,3 +3,9 @@
 
 valor = get_float("Valor: ");
 
+if (valor > 0.25)
+{
+    valor /= 0.25
+}
+
+if
