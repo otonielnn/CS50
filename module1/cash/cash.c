@@ -16,14 +16,12 @@ int main(void)
     {
         valor -= 0.25;
         total_coins += 1;
-        printf("%i\n", total_coins); // OK - 1
     }
 
     while (valor >= 0.10)
     {
         valor -= 0.10;
         total_coins += 1;
-        printf("%i\n", total_coins); //OK - 2
     }
 
     while (valor >+ 0.05)
@@ -32,11 +30,11 @@ int main(void)
         total_coins += 1;
         printf("%i\n", total_coins); // - 3
     }
+
     while (valor >= 0.01)
     {
         valor -= 0.01;
         total_coins += 1;
-    printf("%f\n", valor);
         printf("%i\n", total_coins); // - 3
     }
     printf("%i\n", total_coins);
