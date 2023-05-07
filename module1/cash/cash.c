@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <cs50.h>
+//25, 10, 5 ,1
 
-valor = get_float("Valor: ");
-
-if (valor > 0.25)
+int main(void)
 {
-    valor /= 0.25
+    int valor = 0;
+    while (valor < 0)
+    {
+        valor = get_float("Valor: ");
+    }
 }
-
-if
