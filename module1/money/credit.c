@@ -3,14 +3,11 @@
 
 int main(void)
 {
-    card = 0;
+    int card = 0;
     while (card < 0)
     {
         card = get_float("Write your credit card number: ");
     }
-}
 
-int Input(int n)
-{
-
+    printf("%i\n", card[0])
 }
