@@ -30,12 +30,11 @@ int main(void)
         coins += 1;
         printf("%i\n", coins); // - 3
     }
-    printf("%f\n", valor * 100);
+    printf("%.2f\n", valor);
     while (valor >= 0.01)
     {
         valor = 0.01;
         coins += 1;
     }
-    printf("%f\n", valor);
     printf("%i\n", coins);
 }
