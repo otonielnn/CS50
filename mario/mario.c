@@ -17,7 +17,7 @@ void torre(int n)
 {
     for (int l = 1; l <= n; l++)
     {
-        for (int d = n; d > l + 1; d--)
+        for (int d = n; d > l; d--)
         {
             if (l != 0)
             {
