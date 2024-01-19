@@ -34,7 +34,7 @@ int main(void)
     int sum1 = 0, sum2 = 0;
 
     // Variável para controlar se estamos multiplicando por 2 ou não
-    int multiply = 0;
+    int multiply = numDigits % 2;
 
     // Iterar sobre os dígitos do número do cartão
     while (cardNumber > 0)
@@ -68,16 +68,23 @@ int main(void)
     // Identificar a bandeira do cartão
     if (isValid)
     {
+        // Ajustar o número do cartão para os primeiros dígitos
+        long long firstDigits = cardNumber;
+        while (firstDigits > 100)
+        {
+            firstDigits /= 10;
+        }
+
         // Verificar os primeiros dígitos para determinar a bandeira
-        if ((cardNumber == 34 || cardNumber == 37) && numDigits == 15)
+        if ((firstDigits == 34 || firstDigits == 37) && numDigits == 15)
         {
             printf("AMEX\n");
         }
-        else if ((cardNumber >= 51 && cardNumber <= 55) && numDigits == 16)
+        else if ((firstDigits >= 51 && firstDigits <= 55) && numDigits == 16)
         {
             printf("MASTERCARD\n");
         }
-        else if ((cardNumber / 1000000000000 == 4 || cardNumber / 100000000000000 == 4) &&
+        else if ((firstDigits / 10 == 4 || firstDigits / 100 == 4) &&
                  (numDigits == 13 || numDigits == 16))
         {
             printf("VISA\n");
@@ -91,4 +98,5 @@ int main(void)
     {
         printf("INVALID\n");
     }
+
 }
