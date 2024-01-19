@@ -28,7 +28,19 @@ int main(void)
             (numbers_count == 16 && card_number / 10000000000000 >= 51 && card_number / 10000000000000 <= 55)
             ((numbers_count == 13 || numbers_count == 16) && card_number / 10000000000000 == 4))
             {
-                printf("Número de cartão Visa válido");
-            } else if (numbers_count == 16)
+                printf("Número de cartão Visa válido\n");
+            } else if (numbers_count == 16 && card_number / 10000000000000 >= 22 && card_number / 10000000000000 <= 27)
+            {
+                printf("Número de cartão MasterCard válido\n");
+            } else if (numbers_count == 15 && card_number / 10000000000000 == 34 && card_number / 10000000000000 == 37)
+            {
+                printf("Número de cartão American Express válido\n");
+            } else
+            {
+                printf("Não reconhecido ou inválido\n");
+            }
+    } else
+    {
+        printf("Número de cartão inválido");
     }
 }
