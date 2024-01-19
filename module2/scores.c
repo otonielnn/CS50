@@ -2,11 +2,20 @@
 
 int main(void)
 {
-    int scores[3];
-    scores[0] = get_int("1º Score: ");
-    scores[1] = get_int("2º Score: ");
-    scores[2] = get_int("3º Score: ");
-    float sum = scores[0] + scores[1] + scores[2];
+    int total = get_int("Total number of scores: ");
+    int socres[total];
+    float sum;
+    for (int i = 0; i < total; i++)
+    {
+        scores[i] = get_int("%dº Score: ", i);
+    }
 
-    printf("Average: %f\n", avg / 3.);
+    for (int i = 0; i < total; i++)
+    {
+        sum = scores[i];
+    }
+
+    float avg = sum / total
+
+    printf("Average: %f\n",  / 3.);
 }
