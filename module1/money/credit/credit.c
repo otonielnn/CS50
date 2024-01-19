@@ -4,5 +4,6 @@
 
 int main(void)
 {
-
+    int numero = get_int("Número:");
+    print(numero)
 }
