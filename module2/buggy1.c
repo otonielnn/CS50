@@ -8,7 +8,7 @@ int main(void)
 {
     // Get negative integer from user
     int i = get_negative_int();
-    printf("%i\n");
+    printf("%i\n", i);
 }
 
 int get_negative_int(void)
@@ -17,6 +17,6 @@ int get_negative_int(void)
     do {
         n = get_int("Negative Integer: ");
     }
-    while (n < 0)
+    while (n < 0);
     return n;
 }
