@@ -33,30 +33,24 @@ int main(void)
     // Variáveis para armazenar a soma dos dígitos
     int sum1 = 0, sum2 = 0;
 
-    // Variável para controlar se estamos multiplicando por 2 ou não
-    int multiply = numDigits % 2;
-
     // Iterar sobre os dígitos do número do cartão
     while (cardNumber > 0)
     {
         // Obter o dígito mais à direita
         int digit = cardNumber % 10;
 
-        // Se estamos multiplicando por 2 neste passo
-        if (multiply)
-        {
-            // Multiplicar por 2 e adicionar os dígitos do produto
-            digit *= 2;
-            sum1 += digit / 10 + digit % 10;
-        }
-        else
-        {
-            // Adicionar ao segundo conjunto de dígitos
-            sum2 += digit;
-        }
+        // Multiplicar por 2 e adicionar os dígitos do produto
+        digit *= 2;
+        sum1 += digit / 10 + digit % 10;
 
-        // Alternar entre multiplicar por 2 e não multiplicar
-        multiply = !multiply;
+        // Remover o dígito mais à direita
+        cardNumber /= 10;
+
+        // Obter o próximo dígito mais à direita
+        digit = cardNumber % 10;
+
+        // Adicionar ao segundo conjunto de dígitos
+        sum2 += digit;
 
         // Remover o dígito mais à direita
         cardNumber /= 10;
@@ -70,7 +64,7 @@ int main(void)
     {
         // Ajustar o número do cartão para os primeiros dígitos
         long long firstDigits = cardNumber;
-        while (firstDigits > 100)
+        while (firstDigits > 10)
         {
             firstDigits /= 10;
         }
@@ -84,8 +78,7 @@ int main(void)
         {
             printf("MASTERCARD\n");
         }
-        else if ((firstDigits / 10 == 4 || firstDigits / 100 == 4) &&
-                 (numDigits == 13 || numDigits == 16))
+        else if ((firstDigits == 4) && (numDigits == 13 || numDigits == 16))
         {
             printf("VISA\n");
         }
