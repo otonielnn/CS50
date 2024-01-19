@@ -2,36 +2,60 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "/opt/cs50/extensions/explain50-1.0.0.vsix",
         "/opt/cs50/extensions/cs50-0.0.1.vsix",
+        "/opt/cs50/extensions/ddb50-2.0.0.vsix",
         "/opt/cs50/extensions/phpliteadmin-0.0.1.vsix",
-        "cs50.ddb50",
+        "/opt/cs50/extensions/style50-0.0.1.vsix",
         "cs50.extension-uninstaller",
-        "cs50.lab50",
-        "cs50.markdown50",
-        "cs50.vscode-presentation-mode",
+        "inferrinizzard.prettier-sql-vscode",
+        "mathematic.vscode-pdf",
+        "ms-ceintl.vscode-language-pack-bg",
+        "ms-ceintl.vscode-language-pack-cs",
+        "ms-ceintl.vscode-language-pack-de",
+        "ms-ceintl.vscode-language-pack-es",
+        "ms-ceintl.vscode-language-pack-fr",
+        "ms-ceintl.vscode-language-pack-hu",
+        "ms-ceintl.vscode-language-pack-it",
+        "ms-ceintl.vscode-language-pack-ja",
+        "ms-ceintl.vscode-language-pack-ko",
+        "ms-ceintl.vscode-language-pack-pl",
+        "ms-ceintl.vscode-language-pack-pt-br",
+        "ms-ceintl.vscode-language-pack-ru",
+        "ms-ceintl.vscode-language-pack-zh-hans",
+        "ms-ceintl.vscode-language-pack-zh-hant",
+        "ms-python.autopep8",
         "ms-python.python",
         "ms-vscode.cpptools",
         "ms-vscode.hexeditor",
         "ms-vsliveshare.vsliveshare",
         "redhat.java",
-        "tomoki1207.pdf",
         "vscjava.vscode-java-debug",
         "vsls-contrib.gitdoc"
       ],
       "settings": {
         "C_Cpp.autocomplete": "disabled",
+        "C_Cpp.clang_format_fallbackStyle": "{ AllowShortFunctionsOnASingleLine: Empty, BraceWrapping: { AfterCaseLabel: true, AfterControlStatement: true, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true }, BreakBeforeBraces: Custom, ColumnLimit: 132, IndentCaseLabels: true, IndentWidth: 4, SpaceAfterCStyleCast: true, TabWidth: 4 }",
         "C_Cpp.codeFolding": "disabled",
         "C_Cpp.debugShortcut": false,
         "C_Cpp.dimInactiveRegions": false,
         "C_Cpp.doxygen.generateOnType": false,
         "C_Cpp.enhancedColorization": "enabled",
         "C_Cpp.errorSquiggles": "disabled",
+        "C_Cpp.formatting": "clangFormat",
+        "Prettier-SQL.keywordCase": "upper",
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.autopep8"
+        },
         "breadcrumbs.enabled": false,
+        "diffEditor.diffAlgorithm": "advanced",
+        "diffEditor.ignoreTrimWhitespace": false,
         "editor.autoClosingQuotes": "never",
         "editor.colorDecorators": false,
         "editor.emptySelectionClipboard": false,
         "editor.folding": false,
         "editor.foldingHighlight": false,
+        "editor.formatOnSave": false,
         "editor.guides.indentation": false,
         "editor.hover.enabled": false,
         "editor.lightbulb.enabled": false,
@@ -61,6 +85,8 @@
         "editor.suggestOnTriggerCharacters": false,
         "explorer.compactFolders": false,
         "extension-uninstaller.uninstall": [
+          "Codeium.codeium",
+          "Codeium.codeium-enterprise-updater",
           "github.copilot",
           "github.copilot-nightly",
           "ms-toolsai.vscode-jupyter-cell-tags",
@@ -68,9 +94,11 @@
         ],
         "extensions.ignoreRecommendations": true,
         "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000,
         "files.exclude": {
           "**/.*": true
         },
+        "files.insertFinalNewline": true,
         "files.trimTrailingWhitespace": true,
         "files.watcherExclude": {
           "**/.git/objects/**": true,
@@ -87,20 +115,24 @@
         "gitdoc.pullOnOpen": false,
         "github.codespaces.devcontainerChangedNotificationStyle": "none",
         "github.gitAuthentication": true,
+        "html.autoCreateQuotes": false,
+        "html.format.indentInnerHtml": true,
         "html.suggest.html5": false,
         "java.configuration.runtimes": [
           {
             "default": true,
-            "name": "JavaSE-18",
-            "path": "/opt/jdk-19.0.2"
+            "name": "JavaSE-21",
+            "path": "/opt/jdk-21.0.1"
           }
         ],
         "java.debug.settings.enableRunDebugCodeLens": false,
         "java.inlayHints.parameterNames.enabled": "none",
         "java.server.launchMode": "Standard",
+        "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
         "javascript.suggest.enabled": false,
         "javascript.validate.enable": false,
         "problems.decorations.enabled": false,
+        "python.terminal.executeInFileDir": true,
         "remote.otherPortsAttributes": {
           "onAutoForward": "silent"
         },
@@ -161,7 +193,6 @@
         },
         "workbench.editor.closeOnFileDelete": true,
         "workbench.editor.enablePreview": false,
-        "workbench.editor.untitled.hint": "hidden",
         "workbench.editorAssociations": {
           "*.wav": "vscode.audioPreview"
         },
@@ -175,9 +206,6 @@
       }
     }
   },
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
-  },
   "forwardPorts": [
     5000,
     5900,
@@ -185,11 +213,13 @@
     8080,
     8082
   ],
-  "image": "ghcr.io/cs50/codespace:c87bdc12fa9251dc50e041332112b37cd8a74c06",
+  "image": "ghcr.io/cs50/codespace:50a6fcbc6ed4dd9d809aafecc5f30d54662277bd",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
   "remoteEnv": {
     "CS50_GH_USER": "${localEnv:GITHUB_USER}",
     "GH_TOKEN": "${localEnv:CS50_TOKEN}",
+    "LANG": "${localEnv:CS50_LANG}",
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
     "TZ": "${localEnv:CS50_TZ}"
   }
 }
