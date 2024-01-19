@@ -24,7 +24,7 @@ int main(void)
 
     if (sum % 10 == 0)
     {
-        if ((numbers_count == 16 || numbers_count == 13) && (card_number / 10000000000000 >= 51 && card_number / 10000000000000 <= 55))
+        if ((numbers_count == 16 || numbers_count == 13) && card_number / 10000000000000 == 4)
             {
                 printf("VISA\n");
             } else if (numbers_count == 16 && card_number / 10000000000000 >= 51 && card_number / 10000000000000 <= 55)
