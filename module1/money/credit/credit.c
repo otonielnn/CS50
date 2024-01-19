@@ -4,6 +4,6 @@
 
 int main(void)
 {
-    int numero = get_int("Número: ");
-    printf("%i\n", numero);
+    int card_number = get_int("Número: ");
+    printf("%i\n", card_number);
 }
