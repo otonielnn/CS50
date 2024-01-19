@@ -1,9 +1,10 @@
+#include <cs50.h>
 #include <stdio.h>
 
 int main(void)
 {
     int total = get_int("Total number of scores: ");
-    int socres[total];
+    int scores[total];
     float sum;
     for (int i = 0; i < total; i++)
     {
@@ -15,7 +16,7 @@ int main(void)
         sum = scores[i];
     }
 
-    float avg = sum / total
+    float avg = sum / total;
 
-    printf("Average: %f\n",  / 3.);
+    printf("Average: %f\n", avg);
 }
