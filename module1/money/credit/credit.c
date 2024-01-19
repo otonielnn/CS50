@@ -4,6 +4,6 @@
 
 int main(void)
 {
-    int numero = get_int("Número:");
-    print(numero)
+    int numero = get_int("Número: ");
+    printf("%i\n", numero);
 }
