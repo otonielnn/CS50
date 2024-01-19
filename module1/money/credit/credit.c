@@ -36,6 +36,4 @@ int main() {
     } else {
         printf("O número do cartão é inválido.\n");
     }
-
-    return 0;
 }
