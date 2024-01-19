@@ -8,10 +8,10 @@ int main(void)
     int sum = 0;
     int numbers_count = 0;
 
-    while (num > 0)
+    while (sum > 0)
     {
-        int digit = num % 10;
-        num /= 10;
+        int digit = sum % 10;
+        sum /= 10;
 
         if (numbers_count % 2 == 1) {
             digit *= 2;
@@ -24,7 +24,7 @@ int main(void)
 
     if (sum % 10 == 0)
     {
-        if ((numbers_count == 15 && (card_number / 10000000000000 == || 34 card_number / 10000000000000 == 37))
+        if ((numbers_count == 15 && (card_number / 10000000000000 == 34 card_number / 10000000000000 == 37))
             (numbers_count == 16 && card_number / 10000000000000 >= 51 && card_number / 10000000000000 <= 55)
             ((numbers_count == 13 || numbers_count == 16) && card_number / 10000000000000 == 4))
             {
