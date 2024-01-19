@@ -3,7 +3,6 @@
 
 int main(void)
 {
-
     // TODO: Solicite o valor inicial ao usuário
     int start, end, years = 0;
     do
