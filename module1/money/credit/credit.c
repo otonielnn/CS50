@@ -4,6 +4,8 @@
 
 int main(void)
 {
-    int card_number = get_int("Número: ");
-    printf("%i\n", card_number);
+    long card_number = get_int("Número: ");
+    int sum = 0;
+    int numbers_count = 0;
+    
 }
