@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    int score1 = 72;
+    int score1 = get_int("");
     int score2 = 73;
     int score3 = 33;
 
