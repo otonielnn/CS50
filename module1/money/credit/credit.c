@@ -26,7 +26,7 @@ int main(void)
     int numDigits = count_digits(cardNumber);
     if (numDigits != 13 && numDigits != 15 && numDigits != 16)
     {
-        printf("Número de cartão de crédito inválido (número incorreto de dígitos).\n");
+        printf("INVALID\n");
         return 1;
     }
 
@@ -98,5 +98,4 @@ int main(void)
     {
         printf("INVALID\n");
     }
-
 }
