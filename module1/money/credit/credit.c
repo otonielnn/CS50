@@ -34,7 +34,7 @@ int main(void)
     int sum1 = 0, sum2 = 0;
 
     // Variável para controlar se estamos multiplicando por 2 ou não
-    int multiply = numDigits % 2;
+    int multiply = numDigits % 2 == 0;
 
     // Iterar sobre os dígitos do número do cartão
     while (cardNumber > 0)
@@ -65,16 +65,16 @@ int main(void)
     // Verificar se o número é válido de acordo com o algoritmo de Luhn
     bool isValid = (sum1 + sum2) % 10 == 0;
 
+    // Ajustar o número do cartão para os primeiros dígitos
+    long long firstDigits = cardNumber;
+    while (firstDigits > 100)
+    {
+        firstDigits /= 10;
+    }
+
     // Identificar a bandeira do cartão
     if (isValid)
     {
-        // Ajustar o número do cartão para os primeiros dígitos
-        long long firstDigits = cardNumber;
-        while (firstDigits > 10)
-        {
-            firstDigits /= 10;
-        }
-
         // Verificar os primeiros dígitos para determinar a bandeira
         if ((firstDigits == 34 || firstDigits == 37) && numDigits == 15)
         {
@@ -84,7 +84,8 @@ int main(void)
         {
             printf("MASTERCARD\n");
         }
-        else if ((firstDigits == 4) && (numDigits == 13 || numDigits == 16))
+        else if ((firstDigits / 10 == 4 || firstDigits / 100 == 4) &&
+                 (numDigits == 13 || numDigits == 16))
         {
             printf("VISA\n");
         }
