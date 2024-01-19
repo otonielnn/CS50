@@ -1,7 +1,9 @@
+#include <cs50.h>
+#include <math.h>
 #include <stdio.h>
-#include <string.h>
 
-int main(void) {
+int main(void)
+{
     // Get card number
     long n = get_long("Number: ");
 
@@ -56,7 +58,7 @@ int main(void) {
         return 0;
     }
 
-     // Get starting digits
+    // Get starting digits
     long start = n;
     do
     {
