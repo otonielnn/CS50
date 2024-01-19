@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <cs50.h>
+#include <stdio.h>
 
 int main(void)
 {
@@ -11,7 +11,6 @@ int main(void)
         start = get_int("Start size: ");
     }
     while (start < 9);
-
 
     // TODO: Solicite o valor final ao usuário
     do
