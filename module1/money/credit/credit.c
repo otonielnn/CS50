@@ -37,19 +37,19 @@ int main(void)
     {
         if ((cardNumber == 34 || cardNumber == 37) && isValid)
         {
-            printf("American Express\n");
+            printf("AMEX\n");
         }
         else if ((cardNumber >= 51 && cardNumber <= 55) && isValid)
         {
-            printf("MasterCard\n");
+            printf("MASTERCARD\n");
         }
         else if ((cardNumber / 1000000000000 == 4 || cardNumber / 100000000000000 == 4) && isValid)
         {
-            printf("Visa\n");
+            printf("VISA\n");
         }
         else
         {
-            printf("Cartão de crédito válido, mas a bandeira não foi identificada.\n");
+            printf("INVALID\n");
         }
     }
     else
