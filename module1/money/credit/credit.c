@@ -32,7 +32,7 @@ int main(void)
             } else if (numbers_count == 16 && card_number / 10000000000000 >= 22 && card_number / 10000000000000 <= 27)
             {
                 printf("MASTERCARD\n");
-            } else if (numbers_count == 15 && card_number / 10000000000000 == 34 && card_number / 10000000000000 == 37)
+            } else if (numbers_count == 15 && (card_number / 10000000000000 == 34 || card_number / 10000000000000 == 37))
             {
                 printf("AMEX\n");
             } else
