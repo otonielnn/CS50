@@ -33,9 +33,9 @@ int main(void)
             } else if (numbers_count == 15 && (card_number / 10000000000000 == 34 || card_number / 10000000000000 == 37))
             {
                 printf("AMEX\n");
+            } else
+            {
+                printf("INVALID\n");
             }
-    } else
-    {
-        printf("INVALID\n");
     }
 }
