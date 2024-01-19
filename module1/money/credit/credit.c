@@ -29,6 +29,6 @@ int main(void)
             ((numbers_count == 13 || numbers_count == 16) && card_number / 10000000000000 == 4))
             {
                 printf("Número de cartão Visa válido");
-            }
+            } else if (numbers_count == 16)
     }
 }
