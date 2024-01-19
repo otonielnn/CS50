@@ -7,5 +7,9 @@ int main(void)
     long card_number = get_int("Número: ");
     int sum = 0;
     int numbers_count = 0;
-    
+
+    while (card_number > 0)
+    {
+        int digit = 
+    }
 }
