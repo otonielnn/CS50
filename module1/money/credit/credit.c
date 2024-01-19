@@ -27,7 +27,7 @@ int main(void)
         if ((numbers_count == 16 || numbers_count == 13) && card_number / 10000000000000 == 4)
             {
                 printf("VISA\n");
-            } else if (numbers_count == 16 && card_number / 10000000000000 >= 51 && card_number / 10000000000000 <= 55)
+            } else if (numbers_count == 16 && (card_number / 10000000000000 >= 51 || card_number / 10000000000000 <= 55))
             {
                 printf("MASTERCARD\n");
             } else if (numbers_count == 15 && (card_number / 10000000000000 == 34 || card_number / 10000000000000 == 37))
