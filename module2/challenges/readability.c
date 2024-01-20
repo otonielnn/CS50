@@ -18,7 +18,7 @@ int main(void)
             letters++;
         }
 
-        if (text[i] == ' ')
+        if (isblank(text[i]))
         {
             words++;
         }
@@ -45,5 +45,4 @@ int main(void)
     else {
         printf("Grade %i\n", grade);
     }
-    printf("%d", sentence);
 }
