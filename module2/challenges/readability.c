@@ -35,7 +35,7 @@ int main(void)
     float indice = 0.0588 * L - 0.296 * S - 15.8;
     int grade = round(indice);
 
-    if (grade < 0) {
+    if (grade < 1) {
         printf("Before Grade 1\n");
     }
     else if (grade >= 16)
