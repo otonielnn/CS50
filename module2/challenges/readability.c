@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <math.h>
 
 int main(void)
 {
@@ -31,7 +32,7 @@ int main(void)
     float L = ((float)letters / (float)words) * 100;
     float S = ((float)sentence / (float)words) * 100;
     float indice = 0.0588 * L - 0.296 * S - 15.8;
-    int grade = indice;
+    int grade = round(indice);
 
     if (grade < 0) {
         printf("Before Grade 1\n");
