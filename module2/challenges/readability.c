@@ -27,7 +27,7 @@ int main(void)
     }
     words++;
     sentence++;
-    float indice = 0.0588 * (words / letters) - 0.296 * (sentence / words) - 15.8;
+    float indice = 0.0588 * (((float)words / (float)letters) * 100) - 0.296 * (((float)sentence / (float)words) * 100) - 15.8;
     int grade = indice;
     printf("Letters: %i\n", letters);
     printf("Words: %i\n", words);
