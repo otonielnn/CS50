@@ -25,12 +25,22 @@ int main(void)
             sentence++;
         }
     }
+    
     words++;
     sentence++;
-    float indice = 0.0588 * (((float)words / (float)letters) * 100) - 0.296 * (((float)sentence / (float)words) * 100) - 15.8;
+    float L = ((float)words / (float)letters) * 100;
+    float S = ((float)sentence / (float)words) * 100;
+    float indice = 0.0588 * L - 0.296 * S - 15.8;
     int grade = indice;
-    printf("Letters: %i\n", letters);
-    printf("Words: %i\n", words);
-    printf("Sentence: %i\n", sentence);
-    printf("indice: %i\n", grade);
+
+    if (grade < 0) {
+        printf("Before Grade 1\n");
+    }
+    else if (grade >= 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else {
+        printf("Grade %i\n", grade);
+    }
 }
