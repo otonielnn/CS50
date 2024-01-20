@@ -25,10 +25,10 @@ int main(void)
             sentence++;
         }
     }
-    
+
     words++;
     sentence++;
-    float L = ((float)words / (float)letters) * 100;
+    float L = ((float)letters / (float)words) * 100;
     float S = ((float)sentence / (float)words) * 100;
     float indice = 0.0588 * L - 0.296 * S - 15.8;
     int grade = indice;
