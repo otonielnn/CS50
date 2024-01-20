@@ -17,18 +17,19 @@ int main(void)
         {
             letters++;
         }
-        else if (isblank(text[i]))
+
+        if (isblank(text[i]))
         {
             words++;
         }
-        else if (ispunct(text[i]))
+
+        if (ispunct(text[i]))
         {
             sentence++;
         }
     }
 
     words++;
-    sentence++;
     float L = ((float)letters / (float)words) * 100;
     float S = ((float)sentence / (float)words) * 100;
     float indice = 0.0588 * L - 0.296 * S - 15.8;
