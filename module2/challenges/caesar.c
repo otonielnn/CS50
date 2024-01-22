@@ -5,7 +5,7 @@
 
 int main(int argc, int argv[])
 {
-    if (isdigit(argv)){
+    if (isdigit(argv[1])){
         string text = get_string("Text: ");
         string encipher = "";
     }
