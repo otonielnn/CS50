@@ -5,11 +5,11 @@
 
 int main(int argc, int argv[])
 {
-    if (isdigit(argv[1])){
-        string text = get_string("Text: ");
-        string encipher = "";
+    if (isdigit(argv[1]) == 0){
+        printf("Usage: ./caesar key");
     }
     else {
-        printf("Usage: ./caesar key");
+        string text = get_string("Text: ");
+        string encipher = "";
     }
 }
