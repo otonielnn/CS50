@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(int argc, string argv[])
 {
@@ -14,15 +15,15 @@ int main(int argc, string argv[])
         {
             if (text[i] >= 'a' && text[i] <= 'z')
             {
-                printf("%c", (((s[i] - 'a') + key) % 26) + 'a');
+                printf("%c", (((text[i] - 'a') + key) % 26) + 'a');
             }
             else if (text[i] >= 'A' && text[i] <= 'Z')
             {
-                printf("%c", (((s[i] - 'A') + key) % 26) + 'A');
+                printf("%c", (((text[i] - 'A') + key) % 26) + 'A');
             }
             else
             {
-                print("%c", text[i]);
+                printf("%c", text[i]);
             }
         }
         printf("\n");
@@ -30,7 +31,7 @@ int main(int argc, string argv[])
     }
     else
     {
-        print("Usage: ./caesar key");
+        printf("Usage: ./caesar key");
         return 1;
     }
 }
