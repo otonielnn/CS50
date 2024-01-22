@@ -1,6 +1,5 @@
 #include <cs50.h>
 #include <ctype.h>
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -17,8 +16,21 @@ int main(int argc, string argv[])
             {
                 printf("%c", (((s[i] - 'a') + key) % 26) + 'a');
             }
+            else if (text[i] >= 'A' && text[i] <= 'Z')
+            {
+                printf("%c", (((s[i] - 'A') + key) % 26) + 'A');
+            }
             else
-            {}
+            {
+                print("%c", text[i]);
+            }
         }
+        printf("\n");
+        return 0;
+    }
+    else
+    {
+        print("Usage: ./caesar key");
+        return 1;
     }
 }
