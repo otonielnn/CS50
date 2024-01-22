@@ -1,14 +1,12 @@
 #include <cs50.h>
-#include <stdio.h>
-#include <math.h>
 #include <ctype.h>
+#include <math.h>
+#include <stdio.h>
 
-int main(int argc, int argv[])
+int main(int argc, string argv[])
 {
-    if (isdigit(argv[1]) == 0){
-        printf("Usage: ./caesar key");
-    }
-    else {
+    if (isdigit(*argv[1]))
+    {
         string text = get_string("Text: ");
         string encipher = "";
     }
