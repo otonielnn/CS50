@@ -11,6 +11,8 @@ int main(int argc, string argv[])
         int key = atoi(argv[1]);
         string text = get_string("Text: ");
 
+        printf("ciphertext: ");
+        
         for (int i = 0; i < strlen(text); i++)
         {
             if (text[i] >= 'a' && text[i] <= 'z')
