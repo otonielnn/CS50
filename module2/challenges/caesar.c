@@ -16,7 +16,14 @@ int main(int argc, string argv[])
                 return 1;
             }
         }
+
         int key = atoi(argv[1]);
+        if (isalpha(key))
+        {
+            printf("Usage: ./caesar key\n");
+            return 1;
+        }
+        
         string text = get_string("Text: ");
 
         printf("ciphertext: ");
