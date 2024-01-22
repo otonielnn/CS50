@@ -6,8 +6,9 @@
 
 int main(int argc, string argv[])
 {
-    if (isdigit(*argv[1]) && argc == 2)
+    if (argc == 2)
     {
+        if ()
         int key = atoi(argv[1]);
         string text = get_string("Text: ");
 
