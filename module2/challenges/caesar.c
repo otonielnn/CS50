@@ -15,8 +15,10 @@ int main(int argc, string argv[])
         {
             if (text[i] >= 'a' && text[i] <= 'z')
             {
-                printf("%c", (((s[i] - 'a') +)))
+                printf("%c", (((s[i] - 'a') + key) % 26) + 'a');
             }
+            else
+            {}
         }
     }
 }
