@@ -18,15 +18,17 @@ int main(int argc, string argv[])
         }
 
         int key = atoi(argv[1]);
+        string text = "";
 
         if (!isdigit(key))
         {
             printf("Usage: ./caesar key\n");
             return 1;
         }
-        
-
-        string text = get_string("Text: ");
+        else
+        {
+            text = get_string("Text: ");
+        }
 
         printf("ciphertext: ");
 
