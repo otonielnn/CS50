@@ -8,6 +8,10 @@ int main(int argc, string argv[])
     if (isdigit(*argv[1]))
     {
         string text = get_string("Text: ");
-        string encipher = "";
+
+        for (int i = 0; i < strlen(text); i++)
+        {
+            if (text[i])
+        }
     }
 }
