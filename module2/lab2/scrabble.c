@@ -29,7 +29,7 @@ int main(void)
 
     else if (score1 == score2)
     {
-        printf("Draw!");
+        printf("Tie!");
     }
 }
 
