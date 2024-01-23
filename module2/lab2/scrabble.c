@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <string.h>
+#include <ctype.h>
 
 int main(void)
 {
@@ -10,6 +11,6 @@ int main(void)
 
     for (int i = 0; i < strlen(player1); i++)
     {
-        player1[i]
+        if (toupper(player1[i]) == 'A')
     }
 }
