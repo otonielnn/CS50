@@ -164,10 +164,9 @@ bool print_winner(void)
 {
     for (int i = 0; candidate_count; i++)
     {
-        string most = candidates[i].name;
         if (candidates[i].votes > round(voter_count / 2))
         {
-            printf("Winner %s\n", most);
+            printf("Winner %s\n", candidates[i].name);
             return true;
         }
     }
