@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -164,7 +165,7 @@ bool print_winner(void)
     for (int i = 0; candidate_count; i++)
     {
         string most = candidates[i].name;
-        if (candidates[i].votes > voter_count/2)
+        if (candidates[i].votes > round(voter_count / 2))
         {
             printf("Winner %s\n", most);
             return true;
