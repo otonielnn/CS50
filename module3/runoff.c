@@ -143,7 +143,7 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     int candidate;
-    
+
     for (int i = 0; i < voter_count; i++)
     {
         for (int j = 0; j < candidate_count; j++)
@@ -167,6 +167,7 @@ bool print_winner(void)
         if (candidates[i].votes > voter_count/2)
         {
             printf("Winner %s\n", most);
+            return true;
         }
     }
     return false;
