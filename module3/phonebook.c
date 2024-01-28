@@ -2,8 +2,16 @@
 #include <stdio.h>
 #include <string.h>
 
+typedef struct
+{
+    string name;
+    string number;
+}
+person;
+
 int main(void)
 {
+    person people[2];
     string names[] = {"Brian", "David"};
     string numbers[] = {"+1-617-495-1000", "+1-949-468-2750"};
 
