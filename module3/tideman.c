@@ -101,7 +101,11 @@ bool vote(int rank, string name, int ranks[])
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcmp(name, cnadidate[i].name))
+        if (strcmp(name, cnadidate[i].name) == 0)
+        {
+            ranks[rank] = i;
+            return true;
+        }
     }
     return false;
 }
@@ -109,15 +113,33 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
-    // TODO
-    return;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = i + 1; j < candidate_count; j++)
+        {
+            preferences[ranks[i]][ranks[j]]++;
+        }
+    }
 }
 
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    // TODO
-    return;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = i + 1; j < candidate_count; j++)
+        {
+            pairs[pair_count].winner = i;
+            pairs[pair_count].loser = j;
+            pair_count++
+        }
+        else if (preferences[i][j] < preferences[j][i])
+        {
+            pairs[pair_count].winner = j;
+            pairs[pair_count].loser = i;
+            pair_count++;
+        }
+    }
 }
 
 // Sort pairs in decreasing order by strength of victory
