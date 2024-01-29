@@ -166,6 +166,7 @@ bool has_cycle(int winner, int loser)
     while (winner != -1 && winner != loser)
     {
         bool found = false;
+
         for (int i = 0; i < candidate_count; i++)
         {
             if (locked[i][winner])
@@ -176,7 +177,7 @@ bool has_cycle(int winner, int loser)
         }
         if (!found)
         {
-            winner--;
+            winner = -1;
         }
     }
 
