@@ -33,6 +33,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+int comparator(const void *a, const void *b);
 
 int main(int argc, string argv[])
 {
@@ -183,4 +184,12 @@ void print_winner(void)
             printf("%s\n", candidates[col]);
         }
     }
+}
+
+int comparator(const void *a, const void *b)
+{
+    pair *ab = (pair *)a;
+    pair *ba = (pair *)b;
+
+    return (preferences[ba->winner][ba->loser] - preferences[ab->winner][ab->loser]);
 }
