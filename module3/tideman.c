@@ -147,20 +147,38 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // TODO
-    return;
+    qsort(pairs, pair_count, sizeof(pair), comparator);
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // TODO
-    return;
+    for (int i = 0; i < pair_count; i++)
+    {
+        if (!has_cycle(pairs[i].winner, pairs[i].loser))
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
+    }
 }
 
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
-    return;
+    for (int col = 0; col < MAX; col++)
+    {
+        bool found_source = true;
+        for (int row = 0; row < MAX; row++)
+        {
+            if (locked[row][col] == true)
+            {
+                found_source = false;
+                break;
+            }
+        }
+        if (found_source)
+        {
+            printf("%s\n", candidates[col]);
+        }
+    }
 }
