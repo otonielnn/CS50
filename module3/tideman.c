@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 // Max number of candidates
 #define MAX 9
@@ -147,6 +147,14 @@ void add_pairs(void)
     }
 }
 
+int comparator(const void *a, const void *b)
+{
+    pair *ab = (pair *) a;
+    pair *ba = (pair *) b;
+
+    return (preferences[ba->winner][ba->loser] - preferences[ab->winner][ab->loser]);
+}
+
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
@@ -210,12 +218,4 @@ void print_winner(void)
             printf("%s\n", candidates[col]);
         }
     }
-}
-
-int comparator(const void *a, const void *b)
-{
-    pair *ab = (pair *)a;
-    pair *ba = (pair *)b;
-
-    return (preferences[ba->winner][ba->loser] - preferences[ab->winner][ab->loser]);
 }
