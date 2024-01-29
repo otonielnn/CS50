@@ -153,6 +153,32 @@ void sort_pairs(void)
     qsort(pairs, pair_count, sizeof(pair), comparator);
 }
 
+bool has_cycle(int winner, int loser)
+{
+    while (winner != -1 && winner != loser)
+    {
+        bool found = false;
+        for (int i = 0; i < candidate_count; i++)
+        {
+            if (locked[i][winner])
+            {
+                found = true;
+                winner = i;
+            }
+        }
+        if (!found)
+        {
+            winner--;
+        }
+    }
+
+    if (winner == loser)
+    {
+        return true;
+    }
+    return false;
+}
+
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
@@ -192,30 +218,4 @@ int comparator(const void *a, const void *b)
     pair *ba = (pair *)b;
 
     return (preferences[ba->winner][ba->loser] - preferences[ab->winner][ab->loser]);
-}
-
-bool has_cycle(int winner, int loser)
-{
-    while (winner != -1 && winner != loser)
-    {
-        bool found = false;
-        for (int i = 0; i < candidate_count; i++)
-        {
-            if (locked[i][winner])
-            {
-                found = true;
-                winner = i;
-            }
-        }
-        if (!found)
-        {
-            winner--;
-        }
-    }
-
-    if (winner == loser)
-    {
-        return true;
-    }
-    return false;
 }
