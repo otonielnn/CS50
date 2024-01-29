@@ -193,3 +193,29 @@ int comparator(const void *a, const void *b)
 
     return (preferences[ba->winner][ba->loser] - preferences[ab->winner][ab->loser]);
 }
+
+bool has_cycle(int winner, int loser)
+{
+    while (winner != -1 && winner != loser)
+    {
+        bool found = false;
+        for (int i = 0; i < candidate_count; i++)
+        {
+            if (locked[i][winner])
+            {
+                found = true;
+                winner = i;
+            }
+        }
+        if (!found)
+        {
+            winner--;
+        }
+    }
+
+    if (winner == loser)
+    {
+        return true;
+    }
+    return false;
+}
