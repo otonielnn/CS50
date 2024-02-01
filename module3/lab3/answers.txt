@@ -9,7 +9,7 @@ sorted 50.000 - 0,723
 sort2 uses: Merge Sort
 
 How do you know?:
-The program growing exponentially in time on reversed files.
+The program growing exponentially in time on reversed.
 
 reversed 50.000 - 0,786
 sorted 50.000 - 0,951
