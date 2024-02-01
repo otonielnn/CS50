@@ -1,4 +1,4 @@
-sort1 uses: TODO
+sort1 uses: Bubble Sort
 
 How do you know?: TODO
 
@@ -12,7 +12,7 @@ How do you know?: TODO
 reversed 50.000 - 0,786
 sorted 50.000 - 0,951
 
-sort3 uses: TODO
+sort3 uses: T
 
 How do you know?: TODO
 
