@@ -7,7 +7,7 @@ sorted 50.000 - 0,723
 
 sort2 uses: Selection Sort
 
-How do you know?: Selection Sort
+How do you know?: Selec
 
 reversed 50.000 - 0,786
 sorted 50.000 - 0,951
