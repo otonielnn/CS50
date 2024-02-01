@@ -3,15 +3,18 @@ sort1 uses: TODO
 How do you know?: TODO
 
 reversed 50.000 - 6,148
+sorted 50.000 - 0,723
 
 sort2 uses: TODO
 
 How do you know?: TODO
 
 reversed 50.000 - 0,786
+sorted 50.000 - 0,951
 
 sort3 uses: TODO
 
 How do you know?: TODO
 
 reversed 50.000 - 2,852
+sorted 50.000 - 2,702
