@@ -2,6 +2,6 @@
 
 int main(void)
 {
-    int n = 50
-    printf("%i\n", n)
+    int n = 50;
+    printf("%p\n", &n);
 }
