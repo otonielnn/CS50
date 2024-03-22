@@ -3,10 +3,11 @@
 
 int main(void)
 {
-    char *s = malloc(3);
+    char *s = malloc(4);
     s[0] = 'H';
     s[1] = 'I';
     s[2] = '!';
     s[3] = '\n';
     printf("%s\n", s);
+    free(s);
 }
