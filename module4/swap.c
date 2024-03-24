@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+
+
 int main(void)
 {
     int x = 1;
@@ -11,5 +13,7 @@ int main(void)
 
 void swap(int a, int b)
 {
-    
+    int tmp = a;
+    a = b;
+    b = tmp;
 }
