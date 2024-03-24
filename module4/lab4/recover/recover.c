@@ -30,23 +30,12 @@ int main(int argc, char *argv[])
                 fclose(img);
             }
 
-            if (counter == 0)
-            {
-                sprintf(filename, "%03i.jpg", counter);
-                img = fopen(filename, "w");
-                fwrite(buffer, 1, 512, img);
-                found_jpeg = false;
-                counter++;
-            }
-            else
-            {
-                fclose(img);
-                sprintf(filename, "%03i.jpg", counter);
-                img = fopen(filename, "w");
-                fwrite(buffer, 1, 512, img);
-                found_jpeg = false;
-                counter++;
-            }
+            sprintf(filename, "%03i.jpg", counter);
+            img = fopen(filename, "w");
+            fwrite(buffer, 1, 512, img);
+            found_jpeg = false;
+            counter++;
         }
+        else if ()
     }
 }
