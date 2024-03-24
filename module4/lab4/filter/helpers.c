@@ -86,8 +86,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE image_copy[height][width];
-    int gx_array = {-1, 0, 1, -2, 0, 2, -1, 0 , 1};
-    int gy_array = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
+    int gx_array[] = {-1, 0, 1, -2, 0, 2, -1, 0 , 1};
+    int gy_array[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
