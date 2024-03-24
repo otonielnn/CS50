@@ -98,7 +98,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int updated_j = j - 1; updated_j < j + 2; updated_j++)
                 {
-                    if (!(updated_i < 0 || updated_j < 0 || updated_i > height || updated_j > width))
+                    if (!(updated_i < 0 || updated_j < 0 || updated_i >= height || updated_j >= width))
                     {
                         gx_red += gx_array[counter] * image[updated_i][updated_j].rgbtRed;
                         gx_green += gx_array[counter] * image[updated_i][updated_j].rgbtGreen;
@@ -107,8 +107,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         gy_green += gy_array[counter] * image[updated_i][updated_j].rgbtGreen;
                         gy_blue += gy_array[counter] * image[updated_i][updated_j].rgbtBlue;
                     }
+                    counter++;
                 }
-                counter++;
             }
             int final_red = round(sqrt(pow(gx_red, 2) + pow(gy_red, 2)));
             int final_green = round(sqrt(pow(gx_green, 2) + pow(gy_green, 2)));
