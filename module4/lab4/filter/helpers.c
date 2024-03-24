@@ -113,7 +113,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int final_red = round(sqrt(pow(gx_red, 2) + pow(gy_red, 2)));
             int final_green = round(sqrt(pow(gx_green, 2) + pow(gy_green, 2)));
             int final_blue = round(sqrt(pow(gx_blue, 2) + pow(gy_blue, 2)));
-            
+
+            image_copy[i][j] = (final_red > 255) ? 255 : final_red;
+            image_copy[i][j] = (final_green > 255) ? 255 : final_green;
+            image_copy[i][j] = (final_blue > 255) ? 255 : final_blue;
         }
     }
     return;
