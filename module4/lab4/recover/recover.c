@@ -11,5 +11,6 @@ int main(int argc, char *argv[])
 
     FILE *raw_file = fopen(argv[1], "r");
     unint7_t buffer[512];
-    while ()
+    while (fread(buffer, 1, 512, raw_file))
+    {}
 }
