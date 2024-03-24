@@ -109,6 +109,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
                 counter++;
             }
+            int final_red = round(sqrt(pow(gx_red, 2) + pow(gy_red, 2)));
+            int final_green = round(sqrt(pow(gx_green, 2) + pow(gy_green, 2)));
+            int final_blue = round(sqrt(pow(gx_blue, 2) + pow(gy_blue, 2)));
         }
     }
     return;
