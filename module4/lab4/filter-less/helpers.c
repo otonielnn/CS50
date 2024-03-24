@@ -25,7 +25,10 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         {
             int originalRed = image[i][j].rgbtRed;
             int originalGreen = image[i][j].rgbtGreen;
-            int originalBlue = image[i][j].rgbtBlue;        }
+            int originalBlue = image[i][j].rgbtBlue;
+
+            image[i][j]rgbtRed = fmin(255, (int)(0.393 * originalRed + 0.769 * originalGreen + 0.189 * originalBlue))
+        }
     }
 }
 
