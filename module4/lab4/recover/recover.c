@@ -41,4 +41,5 @@ int main(int argc, char *argv[])
             fwrite(buffer, 1, 512, img);
         }
     }
+    fclose(raw_file);
 }
