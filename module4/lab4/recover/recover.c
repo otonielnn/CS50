@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 int main(int argc, char *argv[])
 {
@@ -9,6 +10,6 @@ int main(int argc, char *argv[])
     }
 
     FILE *raw_file = fopen(argv[1], "r");
-
+    unint7_t buffer[512];
     while ()
 }
