@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     }
 
     FILE *raw_file = fopen(argv[1], "r");
-    unint8_t buffer[512];
+    uint8_t buffer[512];
     bool found_jpeg = false;
     int counter = 0;
     char filename[8];
@@ -36,6 +36,9 @@ int main(int argc, char *argv[])
             found_jpeg = false;
             counter++;
         }
-        else if ()
+        else if (counter != 0)
+        {
+            fwrite(buffer, 1, 512, img);
+        }
     }
 }
