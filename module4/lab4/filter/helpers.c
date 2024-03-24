@@ -1,4 +1,5 @@
 #include "helpers.h"
+#include <math.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -32,7 +33,32 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    RGBTRIPLE temp[height][width];
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            temp[i][j] = image[i][j];
+
+        }
+    }
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            int totalRed = 0, totalGreen = 0, totalBlue = 0;
+            float counter = 0.00;
+
+            for (int x = -1; x < 2; x++)
+            {
+                for (int y = -1; y < 2; y++)
+                {
+                    
+                }
+            }
+        }
+    }
 }
 
 // Detect edges
