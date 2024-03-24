@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdint.h>
-#include <stdlib.h>
 #include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[])
 {
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
         if (found_jpeg == true)
         {
-            if (counter != 0 )
+            if (counter != 0)
             {
                 fclose(img);
             }
