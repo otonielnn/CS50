@@ -50,6 +50,6 @@ int main(void)
 
     for (node *tmp = list; tmp != null; tmp = tmp->next)
     {
-        printf(")
+        printf("%i\n", tmp->number);
     }
 }
