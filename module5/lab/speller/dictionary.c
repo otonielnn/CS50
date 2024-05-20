@@ -2,6 +2,9 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <strings.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -25,9 +28,9 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-    int hash_value = hash(word)
-    node *cursor = table[hash_value]
-    while (true)
+    int hash_value = hash(word);
+    node *cursor = table[hash_value];
+    while (cursor != NULL)
     {
         if (strcasecmp(cursor->word, word) == 0)
         {
@@ -89,5 +92,15 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    for (int i = 0; i < N; i++)
+    {
+        node *tmp = table[i];
+        node *cursor = table[i];
+        while (cursor != NULL)
+        {
+            cursor = cursor->next;
+            free(tmp);
+        }
+    }
     return false;
 }
