@@ -1,5 +1,3 @@
-// Implements a dictionary's functionality
-
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,8 +27,16 @@ int word_count = 0;
 // Returns true if word is in dictionary else false
 bool check(const char *word)
 {
+    // Convert word to lowercase
+    char lower_word[strlen(word) + 1];
+    for (int i = 0; i < strlen(word); i++)
+    {
+        lower_word[i] = tolower(word[i]);
+    }
+    lower_word[strlen(word)] = '\0';
+
     // Hash word to obtain hash value
-    unsigned int hash_value = hash(word);
+    unsigned int hash_value = hash(lower_word);
 
     // Access linked list at that index in the hash table
     node *cursor = table[hash_value];
@@ -38,7 +44,7 @@ bool check(const char *word)
     // Traverse linked list, looking for the word (case-insensitive comparison)
     while (cursor != NULL)
     {
-        if (strcasecmp(cursor->word, word) == 0)
+        if (strcasecmp(cursor->word, lower_word) == 0)
         {
             return true;
         }
@@ -52,7 +58,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     unsigned int hash = 0;
-    for (int i = 0, n = strlen(word); i < n; i++)
+    for (int i = 0; word[i] != '\0'; i++)
     {
         hash = (hash << 2) ^ word[i];
     }
