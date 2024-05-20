@@ -87,7 +87,7 @@ bool load(const char *dictionary)
         if (new_node == NULL)
         {
             fclose(file);
-            unload();
+            printf("Out of memory.\n");
             return false;
         }
         strcpy(new_node->word, word);
