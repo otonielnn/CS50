@@ -25,6 +25,19 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    int hash_value = hash(word)
+    node *cursor = table[hash_value]
+    while (true)
+    {
+        if (strcasecmp(cursor->word, word) == 0)
+        {
+            return true;
+        }
+        else
+        {
+            cursor = cursor->next;
+        }
+    }
     return false;
 }
 
@@ -60,6 +73,7 @@ bool load(const char *dictionary)
         strcpy(new_word->word, buffer);
         new_word->next = table[hash_value];
         table[hash_value] = new_word;
+        number_words++;
     }
     return true;
 }
@@ -68,7 +82,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return number_words;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
