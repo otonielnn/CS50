@@ -1,10 +1,11 @@
 // Implements a dictionary's functionality
-#include <ctype.h>
+
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <strings.h>
 #include <string.h>
+#include <strings.h>
+#include <ctype.h>
 
 #include "dictionary.h"
 
@@ -16,92 +17,117 @@ typedef struct node
 }
 node;
 
-int number_words = 0;
-
 // Number of buckets in hash table
-#define N 65536 // ou qualquer outro valor desejado para o número de buckets na tabela hash
+#define N 65536
 
 // Hash table
 node *table[N];
 
-// Hashes word to a number
-unsigned int hash(const char *word)
-{
-    unsigned int hash = 0;
-    for (int i = 0; word[i] != '\0'; i++)
-    {
-        hash = (hash << 2) ^ word[i];
-    }
-    return hash % N;
-}
+// Number of words loaded in the dictionary
+int word_count = 0;
 
-// Returns true if word is in dictionary, else false
+// Returns true if word is in dictionary else false
 bool check(const char *word)
 {
-    int hash_value = hash(word);
+    // Hash word to obtain hash value
+    unsigned int hash_value = hash(word);
+
+    // Access linked list at that index in the hash table
     node *cursor = table[hash_value];
+
+    // Traverse linked list, looking for the word (case-insensitive comparison)
     while (cursor != NULL)
     {
         if (strcasecmp(cursor->word, word) == 0)
         {
             return true;
         }
-        else
-        {
-            cursor = cursor->next;
-        }
+        cursor = cursor->next;
     }
+
     return false;
 }
 
-// Loads dictionary into memory, returning true if successful, else false
+// Hashes word to a number
+unsigned int hash(const char *word)
+{
+    unsigned int hash = 0;
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
+        hash = (hash << 2) ^ word[i];
+    }
+    return hash % N;
+}
+
+// Loads dictionary into memory, returning true if successful else false
 bool load(const char *dictionary)
 {
-    FILE *dict_file = fopen(dictionary, "r");
-    if (dict_file == NULL)
+    // Open dictionary file
+    FILE *file = fopen(dictionary, "r");
+    if (file == NULL)
     {
-        printf("Was not able to open dictionary\n");
+        printf("Could not open %s.\n", dictionary);
         return false;
     }
 
-    char buffer[LENGTH + 1];
-    while (fscanf(dict_file, "%s", buffer) != EOF)
+    // Buffer to store word read from file
+    char word[LENGTH + 1];
+
+    // Read strings from file one at a time
+    while (fscanf(file, "%s", word) != EOF)
     {
-        node *new_word = malloc(sizeof(node));
-        if (new_word == NULL)
+        // Create a new node for each word
+        node *new_node = malloc(sizeof(node));
+        if (new_node == NULL)
         {
-            fclose(dict_file);
+            fclose(file);
+            unload();
             return false;
         }
-        int hash_value = hash(buffer);
-        strcpy(new_word->word, buffer);
-        new_word->next = table[hash_value];
-        table[hash_value] = new_word;
-        number_words++;
+        strcpy(new_node->word, word);
+
+        // Hash word to obtain hash value
+        unsigned int hash_value = hash(word);
+
+        // Insert node into hash table at that location
+        new_node->next = table[hash_value];
+        table[hash_value] = new_node;
+
+        // Update word count
+        word_count++;
     }
 
-    fclose(dict_file);
+    // Close dictionary file
+    fclose(file);
+
+    // Indicate success
     return true;
 }
 
-// Returns number of words in dictionary if loaded, else 0 if not yet loaded
+// Returns number of words in dictionary if loaded else 0 if not yet loaded
 unsigned int size(void)
 {
-    return number_words;
+    return word_count;
 }
 
-// Unloads dictionary from memory, returning true if successful, else false
+// Unloads dictionary from memory, returning true if successful else false
 bool unload(void)
 {
+    // Iterate over each bucket in the hash table
     for (int i = 0; i < N; i++)
     {
+        // Cursor to traverse the linked list
         node *cursor = table[i];
+
+        // Free each node in the linked list
         while (cursor != NULL)
         {
-            node *tmp = cursor;
+            node *temp = cursor;
             cursor = cursor->next;
-            free(tmp);
+            free(temp);
         }
     }
+
+    // Indicate success
     return true;
 }
