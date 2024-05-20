@@ -2,6 +2,10 @@
 
 #include <stdbool.h>
 #include <strings.h>
+#include <string.h>
+#include <studio.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "dictionary.h"
 
 // Represents a node in a hash table
@@ -42,14 +46,40 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO
-    return 0;
+    unsigned long total = 0;
+    for (int i = 0; i < strlen(word); i++)
+    {
+        total += tolower(word[i]);
+    }
+    return total % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
     // TODO
-    return false;
+    FILE *file = fopen(dictionary, "r");
+
+    if (file == NULL)
+    {
+        printf("Unable to open %s\n", dictionary);
+        return false;
+    }
+
+    char word[LENGTH +1];
+    while (fscanf(file, "%s", word) != EOF)
+    {
+        node *n = malloc(sizeof(node));
+    }
+
+    if (n == NULL)
+    {
+        return false;
+    }
+
+    strcpy(n->word, word);
+    hash_value = hash(word);
+    n->next = table[hash_value];
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
