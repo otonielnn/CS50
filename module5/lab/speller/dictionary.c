@@ -1,7 +1,7 @@
 // Implements a dictionary's functionality
 
 #include <stdbool.h>
-
+#include <strings.h>
 #include "dictionary.h"
 
 // Represents a node in a hash table
@@ -18,10 +18,23 @@ const unsigned int N = 1;
 // Hash table
 node *table[N];
 
+unsigned int hash_value;
+
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
     // TODO
+    hash_value * hash(word);
+    node *cursor = table[hash_value];
+
+    while (cursor != 0)
+    {
+        if (strcasecmp(word, cursor->word) == 0)
+        {
+            return true;
+        }
+        cursor = cursor->next;
+    }
     return false;
 }
 
