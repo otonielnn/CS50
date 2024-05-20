@@ -22,7 +22,7 @@ int number_words = 0;
 const unsigned int N = 1;
 
 // Hash table
-node **table;
+node *table[N];
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
