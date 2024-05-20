@@ -40,21 +40,32 @@ int main(void)
 person *create_family(int generations)
 {
     // TODO: Allocate memory for new person
+    person *p = malloc(sizeof(person));
 
     // Generation with parent data
     if (generations > 1)
     {
         // TODO: Recursively create blood type histories for parents
+        person *parent0 = create_family(generations - 1);
+        person *parent1 = create_family(generations - 1);
+
+        p->parents[0] = parent0;
+        p->parents[1] = parent1;
 
         // TODO: Randomly assign child alleles based on parents
+        p->alleles[0] = parent0->alleles[rand() % 2];
+        p->alleles[1] = parent1->alleles[rand() % 2];
     }
 
     // Generation without parent data
     else
     {
         // TODO: Set parent pointers to NULL
+        p->parents[0] = NULL;
+        p->parents[1] = NULL;
 
         // TODO: Randomly assign alleles
+
     }
 
     // TODO: Return newly created person
