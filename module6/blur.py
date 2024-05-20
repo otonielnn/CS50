@@ -1,4 +1,5 @@
 from PIL import Image, ImageFilter
 
 before = Image.open("yard.bmp")
-after = before.filter(ImageFilter.BoxBlur(1))
+after = before.filter(ImageFilter.BoxBlur(10))
+after.save("yardblur.bmp")
