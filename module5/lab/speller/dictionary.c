@@ -19,7 +19,7 @@ node;
 int number_words = 0;
 
 // Number of buckets in hash table
-const unsigned int N = 1;
+#define N 65536 // ou qualquer outro valor desejado para o número de buckets na tabela hash
 
 // Hash table
 node *table[N];
