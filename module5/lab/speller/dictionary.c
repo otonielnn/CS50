@@ -1,6 +1,7 @@
 // Implements a dictionary's functionality
-
+#include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 #include "dictionary.h"
 
@@ -11,6 +12,8 @@ typedef struct node
     struct node *next;
 }
 node;
+
+int number_words = 0;
 
 // Number of buckets in hash table
 const unsigned int N = 1;
@@ -36,7 +39,29 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    return false;
+    for (int i = 0; i < N; i++)
+    {
+        table[i] = NULL;
+    }
+
+    FILE *dict_file = fopen(dictionary, "r");
+
+    if (dict_file == NULL)
+    {
+        printf("Was not able to open dictionary\n");
+        return false;
+    }
+    char buffer[45];
+
+    while (fscanf(file, "%s", buffer))
+    {
+        node *new_word = malloc(sizeof(node));
+        int hash_value = hash(buffer);
+        strcpy(new_word->word, buffer);
+        new_word->next = table[hash_value];
+        table[hash_value] = new_word;
+    }
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
