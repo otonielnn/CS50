@@ -1,11 +1,11 @@
 // Implements a dictionary's functionality
 
+#include <ctype.h>
 #include <stdbool.h>
 #include <strings.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <ctype.h>
 #include "dictionary.h"
 
 // Represents a node in a hash table
