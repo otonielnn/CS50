@@ -24,10 +24,20 @@ const unsigned int N = 1;
 // Hash table
 node *table[N];
 
+// Hashes word to a number
+unsigned int hash(const char *word)
+{
+    unsigned int hash = 0;
+    for (int i = 0; word[i] != '\0'; i++)
+    {
+        hash = (hash << 2) ^ word[i];
+    }
+    return hash % N;
+}
+
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
     int hash_value = hash(word);
     node *cursor = table[hash_value];
     while (cursor != NULL)
@@ -44,40 +54,32 @@ bool check(const char *word)
     return false;
 }
 
-// Hashes word to a number
-unsigned int hash(const char *word)
-{
-    // TODO
-    return 0;
-}
-
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // TODO
-    for (int i = 0; i < N; i++)
-    {
-        table[i] = NULL;
-    }
-
     FILE *dict_file = fopen(dictionary, "r");
-
     if (dict_file == NULL)
     {
         printf("Was not able to open dictionary\n");
         return false;
     }
-    char buffer[45];
 
-    while (fscanf(dict_file, "%s", buffer))
+    char buffer[LENGTH + 1];
+    while (fscanf(dict_file, "%s", buffer) != EOF)
     {
         node *new_word = malloc(sizeof(node));
+        if (new_word == NULL)
+        {
+            fclose(dict_file);
+            return false;
+        }
         int hash_value = hash(buffer);
         strcpy(new_word->word, buffer);
         new_word->next = table[hash_value];
         table[hash_value] = new_word;
         number_words++;
     }
+
     fclose(dict_file);
     return true;
 }
@@ -85,23 +87,21 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
     return number_words;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
     for (int i = 0; i < N; i++)
     {
-        node *tmp = table[i];
         node *cursor = table[i];
         while (cursor != NULL)
         {
+            node *tmp = cursor;
             cursor = cursor->next;
             free(tmp);
         }
     }
-    return false;
+    return true;
 }
