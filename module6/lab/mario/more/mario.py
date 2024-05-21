@@ -19,5 +19,6 @@ for i in range(1, n + 1):
         print(end=" ")
 
     for h in range(i):
-        print("#")
+        print("#", end="")
+
     print()
