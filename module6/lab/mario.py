@@ -10,5 +10,7 @@ for i in range(n):
             print(" ")
 
     h = 1
-    for h in range(n):
+    for h in range(i):
         print("#", end=" ")
+
+    print()
