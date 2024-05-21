@@ -9,7 +9,6 @@ while cc > 0:
 
 if i != 13 and i != 15 and i != 16:
     print("INVALID")
-    return 0
 
 sum1 = 0
 sum2 = 0
