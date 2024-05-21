@@ -3,10 +3,10 @@ change = -1
 while change < 0:
     change = float(input("Changed owed: "))
 
-int cents = round(change * 100)
+cents = round(change * 100)
 coins = 0
 
-while cents > 0;
+while cents > 0:
     if cents >= 25:
         cents -= 25
         coins += 1
