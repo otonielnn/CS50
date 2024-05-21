@@ -1,7 +1,10 @@
 change = -1
 
 while change < 0:
-    change = float(input("Changed owed: "))
+    try:
+        change = float(input("Changed owed: "))
+    except ValueError:
+        print("Write just numbers")
 
 cents = round(change * 100)
 coins = 0
