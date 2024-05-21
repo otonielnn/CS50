@@ -1,5 +1,5 @@
 text = input("Text: ")
-letter = 0
+letters = 0
 words = 0
 sentence = 0
 
