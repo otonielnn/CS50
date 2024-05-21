@@ -1,6 +1,6 @@
 n = 0
 
-while n < 0 || n > 8:
+while n < 0 or n > 8:
     n = int(input("Height: "))
 
 for i in range(n):
@@ -9,7 +9,8 @@ for i in range(n):
         if n != 0:
             print(" ")
 
-    for h = 1 in range(n):
+    h = 1
+    for h in range(n):
         print("#")
 
     print()
