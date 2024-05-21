@@ -5,9 +5,10 @@ while n < 1 or n > 8:
 
 for i in range(n + 1):
     j = n
-    while j > i:
-        if n != 0:
-            print(" ", end=" ")
+    for j in range(i):
+        if i != 0:
+            print(" ", end="")
+
 
     h = 1
     for h in range(i):
