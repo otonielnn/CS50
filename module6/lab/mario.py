@@ -5,7 +5,7 @@ while n < 1 or n > 8:
 
 for i in range(n + 1):
     j = n
-    for j in range(j ,i, --j):
+    for j in range(j ,i , -1):
         if i != 0:
             print(" ", end="")
 
