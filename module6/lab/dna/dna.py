@@ -19,3 +19,21 @@ def main():
         if key == "name":
             continue
     str_counts[key] = longest_match(sequence, key)
+
+    for row in database:
+        match = True
+        for key in row.keys():
+            if key == "name":
+                continue
+
+            if int(row[key]) != str_counts[key]:
+                match = False
+                break
+
+            if match:
+                print(row["name"])
+                return
+    print("No match")
+
+def longest_match():
+    pass
