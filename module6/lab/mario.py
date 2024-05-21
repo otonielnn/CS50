@@ -1,6 +1,6 @@
 n = 0
 
-while n < 0 or n > 8:
+while n < 1 or n > 8:
     n = int(input("Height: "))
 
 for i in range(n):
