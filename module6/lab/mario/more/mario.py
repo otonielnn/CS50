@@ -16,7 +16,7 @@ for i in range(1, n + 1):
         print("#", end="")
 
     if (i != 0):
-        print(end=" ")
+        print(end="  ")
 
     for h in range(i):
         print("#", end="")
