@@ -4,14 +4,14 @@ words = 0
 sentence = 0
 
 for i in range(len(text))
-    if text[i].isalpha():
+   if text[i].isalpha():
         letters += 1
 
     if text[i] == " ":
         words += 1
 
     if text[i] == "." or text[i] == "!" or text[i] == "?":
-        sentence +=1
+        sentence += 1
 
 words += 1
 
