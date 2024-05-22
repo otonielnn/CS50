@@ -35,5 +35,22 @@ def main():
                 return
     print("No match")
 
-def longest_match():
-    pass
+def longest_match(sequence, subsequence):
+
+    subsequence_length = len(subsequence)
+
+    max_repeats = 0
+    for i in range(len(sequence)):
+        repeats = 0
+
+        if sequence[i: i + subsequence_length] == subsequence:
+            repeats += 1
+
+            while sequence[i: i + subsequence_length] == sequence[i + subsequence_length: i + (2 * subsequence_length)]:
+                repeats += 1
+                i += subsequence_length
+
+        if repeats > max_repeats:
+            max_repeats = repeats
+
+    return max_repeats
