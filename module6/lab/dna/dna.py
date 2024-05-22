@@ -1,56 +1,77 @@
+from sys import argv, exit
 import csv
-import sys
+
 
 def main():
-
-    if len(sys.argv) != 3:
+    if len(argv) != 3:
         print("Usage: python dna.py data.csv sequence.txt")
-        sys.exit(1)
+        exit(1)
 
-    with open(sys.argv[1], "r") as database_file:
-        reader = csv.DictReader(database_file)
-        database = [row for row in reader]
+    STRs = []
+    profiles = []
 
-    with open(sys.argv[2], "r") as sequence_file:
-        sequence = sequence_file.read()
+    # Read in database file - using `with` means we don't have to close the file
+    with open(argv[1], mode="r") as database:
+        reader = csv.DictReader(database)
+        # Populate list of Short Tandem Repeats (STRs)
+        STRs = reader.fieldnames[1:]
+        for row in reader:
+            # Add person to profiles
+            profiles.append(row)
 
-    str_counts = {}
-    for key in database[0].keys():
-        if key == "name":
-            continue
-    str_counts[key] = longest_match(sequence, key)
+    # Initialise dictionary for sequence file
+    seq_str_count = dict.fromkeys(STRs, 0)
 
-    for row in database:
-        match = True
-        for key in row.keys():
-            if key == "name":
+    # Read in sequence file
+    with open(argv[2], mode="r") as sequence_file:
+        # Grab first line of txt file
+        sequence = sequence_file.readline()
+        # Loop over every STR from the database
+        for STR in STRs:
+            # Update the Sequence STR dictionary with max amount of repeats
+            seq_str_count[STR] = find_repeats(sequence, STR)
+
+    # Check if any person has same amount of STR repeats as sequence
+    for profile in profiles:
+        match_count = 0
+
+        for STR in STRs:
+            if int(profile[STR]) != seq_str_count[STR]:
                 continue
+            match_count += 1
 
-            if int(row[key]) != str_counts[key]:
-                match = False
-                break
+        if match_count == len(STRs):
+            print(profile['name'])
+            exit(0)
 
-            if match:
-                print(row["name"])
-                return
     print("No match")
+    exit(1)
 
-def longest_match(sequence, subsequence):
 
-    subsequence_length = len(subsequence)
+def find_repeats(sequence, STR):
+    # Number of bases in Short Tandem Repeat
+    L = len(STR)
 
     max_repeats = 0
     for i in range(len(sequence)):
+        # Initialise and reset repeat counter
         repeats = 0
 
-        if sequence[i: i + subsequence_length] == subsequence:
+        if sequence[i: i + L] == STR:
+            # Account for first match
             repeats += 1
-
-            while sequence[i: i + subsequence_length] == sequence[i + subsequence_length: i + (2 * subsequence_length)]:
+            # Keep adding to count for consecutive repeats
+            while sequence[i: i + L] == sequence[i + L: i + (2 * L)]:
                 repeats += 1
-                i += subsequence_length
+                # Shift reading frame (value of i resets in for loop so we can update it here)
+                i += L
 
+        # Update max count if current repeat steak is greater than max
         if repeats > max_repeats:
             max_repeats = repeats
 
     return max_repeats
+
+
+if __name__ == "__main__":
+    main()
