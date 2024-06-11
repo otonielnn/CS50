@@ -29,3 +29,6 @@ WHERE pc.year = 2020 AND pc.month = 7 and pc.day = 28 and pc.duration < 60;
 -- descobrindo id do aeroporto de fiftyville
 SELECT * FROM airports
 WHERE city = "Fiftyville";
+
+SELECT * FROM flights
+WHERE origin_airport_id = 8 AND day = 28 AND month = 7;
