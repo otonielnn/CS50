@@ -12,7 +12,7 @@ with open("Favorite TV Shows - Form Responses 1.csv", "r") as file:
     reader = csv.DictReader(file)
     for row in reader:
         title = row["title"].strip().upper()
-        db.execute("INSERT INTO shows (id, title) VALUES (?, ?)", title)
+        id = db.execute("INSERT INTO shows (id, title) VALUES (?, ?)", title)
         for genre in row["genres"].split(", "):
-            db.execute("INSERT INTO genres (show_id, genre) VALUES (?, ?)")
+            db.execute("INSERT INTO genres (show_id, genre) VALUES (?, ?)", id, genre)
 
