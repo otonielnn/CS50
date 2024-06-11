@@ -45,5 +45,4 @@ AND pc.year = 2020 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
 
 SELECT p.name FROM people p
 JOIN passengers ps ON p.passport_number = ps.passport_number
-WHERE ps.flight_id = 6
-AND p.name IN ('Ernest', 'Russell');
+WHERE ps.flight_id = 6;
