@@ -32,3 +32,13 @@ WHERE city = "Fiftyville";
 
 SELECT * FROM flights
 WHERE origin_airport_id = 8 AND day = 28 AND month = 7;
+
+SELECT p.name
+FROM courthouse_security_logs csl
+JOIN people p ON p.license_plate = csl.license_plate
+JOIN bank_accounts ba ON ba.person_id = p.id
+JOIN atm_transactions at ON at.account_number = ba.account_number
+JOIN phone_calls pc ON pc.caller = p.phone_number
+WHERE csl.year = 2020 AND csl.month = 7 AND csl.day = 28 AND csl.hour = 10 AND csl.minute BETWEEN 15 AND 25
+AND at.atm_location = "Fifer Street" AND at.year = 2020 AND at.month = 7 AND at.day = 28 AND at.transaction_type = "withdraw"
+AND pc.year = 2020 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
