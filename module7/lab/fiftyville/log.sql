@@ -21,5 +21,5 @@ SELECT * FROM passengers
 WHERE passport_number = "8496433585";
 
 SELECT * FROM flights
-WHERE origin_airport_id = 8;
+WHERE origin_airport_id = 8 AND id = 11 OR id = 36 OR id = 48;
 
