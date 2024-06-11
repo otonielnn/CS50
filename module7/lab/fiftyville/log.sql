@@ -12,7 +12,7 @@ SELECT * FROM atm_transactions
 WHERE atm_location = "Fifer Street" AND transaction_type = "withdraw" AND month = 7 AND day = 28;
 -- Witness Raymond
 SELECT * FROM phone_calls
-WHERE duration = 60 AND month = 7 AND day = 28;
+WHERE duration = 10 AND month = 7 AND day = 28;
 
 SELECT * FROM people
 WHERE phone_number = "(609) 555-5876" OR phone_number = "(389) 555-5198";
