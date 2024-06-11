@@ -12,7 +12,7 @@ SELECT * FROM atm_transactions
 WHERE atm_location = "Fifer Street" AND transaction_type = "withdraw" AND month = 7 AND day = 28;
 
 SELECT * FROM phone_calls
-WHERE duration < 10;
+WHERE duration = 60;
 
 
 SELECT * FROM passengers
