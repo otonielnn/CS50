@@ -9,13 +9,8 @@ db.execute("CREATE TABLE shows (id INTEGER, title TEXT, PRIMARY KEY(id))")
 db.execute("CREATE TABLE genres (show_id INTEGER, genre TEXT, FOREIGN KEY(show_id) REFERENCES shows(id))")
 
 with open("Favorite TV Shows - Form Responses 1.csv", "r") as file:
-
     reader = csv.DictReader(file)
-
-    counter = 1
-
     for row in reader:
-
         title = row["title"].strip().upper()
+        db.execute("INSERT INTO shows (id, title) VALUES (?, ?)", title)
 
-        db.execute("INSERT INTO shows (id, title) VALUES (?, ?)", counter, title)
