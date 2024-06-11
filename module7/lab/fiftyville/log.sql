@@ -14,18 +14,3 @@ WHERE atm_location = "Fifer Street" AND transaction_type = "withdraw" AND month 
 SELECT * FROM phone_calls
 WHERE duration < 60 AND month = 7 AND day = 28;
 
-SELECT * FROM people
-WHERE phone_number = "(609) 555-5876" OR phone_number = "(389) 555-5198";
-
-SELECT * FROM passengers
-WHERE passport_number = "8496433585";
-
-SELECT * FROM flights
-WHERE origin_airport_id = 8 AND id = 11 OR id = 36 OR id = 48;
-
-SELECT * FROM bank_accounts
-WHERE person_id = 467400 OR person_id = 561160;
-
-SELECT * FROM airports
-WHERE id = 4;
-
