@@ -6,7 +6,7 @@ SELECT * FROM interviews
 WHERE day = 28 AND month = 7 AND transcript like "%courthouse%";
 
 SELECT * FROM courthouse_security_logs
-WHERE day = 28 and hour = 10;
+WHERE day = 28 AND hour = 10 AND activity = "exit";
 
 SELECT * FROM people
 WHERE license_plate = "5P2BI95";
