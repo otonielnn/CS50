@@ -8,8 +8,9 @@ WHERE day = 28 AND month = 7 AND transcript like "%courthouse%";
 SELECT * FROM courthouse_security_logs
 WHERE day = 28 AND hour = 10 AND activity = "exit";
 
-SELECT * FROM people
-WHERE license_plate = "5P2BI95";
+SELECT * FROM atm_transactions
+WHERE atm_location = "Fifer Street" AND transaction_type = "withdraw";
+
 
 SELECT * FROM phone_calls
 WHERE caller = "(725) 555-4692" OR receiver = "(725) 555-4692";
@@ -20,3 +21,6 @@ WHERE passport_number = "2963008352";
 
 SELECT * FROM flights
 WHERE origin_airport_id = 8;
+
+SELECT * FROM people
+WHERE license_plate = "5P2BI95";
