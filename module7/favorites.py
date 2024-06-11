@@ -1,26 +1,23 @@
 import csv
 
-# For counting favorites
+from cs50 import SQL
+
 counts = {}
 
-# Open CSV file
+open("show.db", "w").close()
+
 with open("Favorite TV Shows - Form Responses 1.csv", "r") as file:
 
-    # Create DictReader
     reader = csv.DictReader(file)
 
-    # Iterate over CSV file
     for row in reader:
 
-        # Force title to lowercase
         title = row["title"].lower()
 
-        # Add title to counts
         if title in counts:
             counts[title] += 1
         else:
             counts[title] = 1
 
-# Print counts, sorted by key
 for title, count in sorted(counts.items(), key=lambda item: item[1], reverse=True):
     print(title, count, sep=" | ")
