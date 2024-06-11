@@ -31,7 +31,7 @@ SELECT * FROM airports
 WHERE city = "Fiftyville";
 
 SELECT * FROM flights
-WHERE origin_airport_id = 8 AND day = 28 AND month = 7;
+WHERE origin_airport_id = 8 AND day = 29 AND month = 7;
 
 SELECT p.name
 FROM courthouse_security_logs csl
@@ -45,4 +45,4 @@ AND pc.year = 2020 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
 
 SELECT p.name FROM people p
 JOIN passengers ps ON p.passport_number = ps.passport_number
-WHERE ps.flight_id = 6;
+WHERE ps.flight_id = 36;
