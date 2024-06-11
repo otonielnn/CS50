@@ -15,7 +15,7 @@ SELECT * FROM phone_calls
 WHERE duration < 60 AND month = 7 AND day = 28;
 
 SELECT a.*, p.name
-FROM atm_transaction a
+FROM atm_transactions a
 JOIN bank_accounts b ON a.account_number = b.account_number
 JOIN people p ON b.person_id = p.id
 WHERE a.atm_location = "FiFer Street" AND a.year = 2020 AND a.month = 7 AND a.day = 28 AND a.transaction_type = "withdraw";
