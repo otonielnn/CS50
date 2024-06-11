@@ -13,4 +13,6 @@ with open("Favorite TV Shows - Form Responses 1.csv", "r") as file:
     for row in reader:
         title = row["title"].strip().upper()
         db.execute("INSERT INTO shows (id, title) VALUES (?, ?)", title)
+        for genre in row["genres"].split(", "):
+            db.execute("INSERT INTO genres (show_id, genre) VALUES (?, ?)")
 
