@@ -16,12 +16,6 @@ with open("Favorite TV Shows - Form Responses 1.csv", "r") as file:
 
     for row in reader:
 
-        title = row["title"].lower()
+        title = row["title"].strip().upper()
 
-        if title in counts:
-            counts[title] += 1
-        else:
-            counts[title] = 1
-
-for title, count in sorted(counts.items(), key=lambda item: item[1], reverse=True):
-    print(title, count, sep=" | ")
+        db.execute("INSERT INTO shows (title) VALUES (?)", title)
