@@ -18,4 +18,4 @@ SELECT * FROM passengers
 WHERE passport_number = "2963008352";
 
 SELECT * FROM flights
-WHERE day = 28 and month = 7;
+WHERE origin_airport_id = 8;
