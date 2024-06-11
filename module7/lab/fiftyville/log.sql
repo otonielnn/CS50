@@ -42,3 +42,8 @@ JOIN phone_calls pc ON pc.caller = p.phone_number
 WHERE csl.year = 2020 AND csl.month = 7 AND csl.day = 28 AND csl.hour = 10 AND csl.minute BETWEEN 15 AND 25
 AND at.atm_location = "Fifer Street" AND at.year = 2020 AND at.month = 7 AND at.day = 28 AND at.transaction_type = "withdraw"
 AND pc.year = 2020 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
+
+SELECT p.name FROM people p
+JOIN passengers ps ON p.passport_number = ps.passport_number
+WHERE ps.flight_id = 6
+AND p.name IN ('Ernest', 'Russell');
