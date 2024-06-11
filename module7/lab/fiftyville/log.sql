@@ -51,5 +51,5 @@ WHERE ps.flight_id = 36;
 SELECT p2.name AS receiver
 FROM phone_calls pc
 JOIN people p1 ON pc.caller = p1.phone_number
-JOIN people p2 ON pc.caller = p2.phone_number
+JOIN people p2 ON pc.receiver = p2.phone_number
 WHERE p1.name = 'Ernest' AND pc.year = 2020 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
