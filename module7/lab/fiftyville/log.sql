@@ -3,7 +3,7 @@ SELECT * FROM crime_scene_reports
 WHERE street = "Chamberlin Street" AND description LIKE "%cs50%";
 
 SELECT * FROM interviews
-WHERE day = 28 AND month = 7;
+WHERE day = 28 AND month = 7 AND transcript like "%courthouse%";
 
 SELECT * FROM courthouse_security_logs
 WHERE day = 28 and hour = 10;
