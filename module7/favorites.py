@@ -7,6 +7,8 @@ counts = {}
 open("show.db", "w").close()
 db = SQL("sqlite:///shows.db")
 
+db.execute("CREATE TABLE shows (id INTEGER, title TEXT, PRIMARY KEY(id))")
+
 with open("Favorite TV Shows - Form Responses 1.csv", "r") as file:
 
     reader = csv.DictReader(file)
