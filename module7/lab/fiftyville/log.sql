@@ -9,7 +9,7 @@ SELECT * FROM courthouse_security_logs
 WHERE day = 28 AND hour = 10 AND activity = "exit" AND license_plate = "4328GD8";
 
 SELECT * FROM atm_transactions
-WHERE atm_location = "Fifer Street" AND transaction_type = "withdraw" AND month = 7 AND day = 28;
+WHERE atm_location = "Fifer Street" AND transaction_type = "withdraw" AND month = 7 AND day = 28 AND account_number = "28500762";
 
 SELECT * FROM phone_calls
 WHERE duration = 60 AND month = 7 AND day = 28;
