@@ -4,3 +4,6 @@ WHERE street = "Chamberlin Street";
 
 SELECT * FROM courthouse_security_logs
 WHERE day = 28 and hour = 10;
+
+SELECT * FROM people
+WHERE license_plate = "13FNH73";
