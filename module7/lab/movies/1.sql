@@ -1,1 +1,1 @@
-SELECT DISTINCT * FROM movies where year = 2008;
+SELECT DISTINCT title FROM movies where year = 2008;
