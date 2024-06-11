@@ -7,3 +7,12 @@ WHERE day = 28 and hour = 10;
 
 SELECT * FROM people
 WHERE license_plate = "13FNH73";
+
+SELECT * FROM interviews
+WHERE day = 28 AND month = 7;
+
+SELECT * FROM passengers
+WHERE passport_number = "3642612721";
+
+SELECT * FROM flights
+WHERE day = 28 and month = 7;
