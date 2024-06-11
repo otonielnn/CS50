@@ -5,6 +5,7 @@ from cs50 import SQL
 counts = {}
 
 open("show.db", "w").close()
+db = SQL("sqlite:///shows.db")
 
 with open("Favorite TV Shows - Form Responses 1.csv", "r") as file:
 
