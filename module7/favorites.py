@@ -2,9 +2,7 @@ import csv
 
 from cs50 import SQL
 
-counts = {}
-
-open("show.db", "w").close()
+open("shows.db", "w").close()
 db = SQL("sqlite:///shows.db")
 
 db.execute("CREATE TABLE shows (id INTEGER, title TEXT, PRIMARY KEY(id))")
