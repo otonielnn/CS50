@@ -11,9 +11,8 @@ WHERE day = 28 AND hour = 10 AND activity = "exit";
 SELECT * FROM atm_transactions
 WHERE atm_location = "Fifer Street" AND transaction_type = "withdraw" AND month = 7 AND day = 28;
 
-
 SELECT * FROM phone_calls
-WHERE caller = "(725) 555-4692" OR receiver = "(725) 555-4692";
+WHERE duration < 2;
 
 
 SELECT * FROM passengers
