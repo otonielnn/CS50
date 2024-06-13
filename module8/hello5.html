@@ -4,9 +4,14 @@
     <head>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                document.querySelector('form').addEventListener('submit', () => {
-                    let name = document.querySelector('#name').value;
-                    alert(`hello, ${name}`);
+                let input = document.querySelector('input');
+                input.addEventListener('keyup', (event) => {
+                    let name = document.querySelector('#name');
+                    if (input.value) {
+                        name.innerHTML = `hello, ${input.value}`;
+                    } else {
+                        name.innerHTML = 'hello, whoever you are';
+                    }
                 })
             });
         </script>
