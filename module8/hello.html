@@ -3,13 +3,11 @@
 <html lang="pt-br">
     <head>
         <script>
-            function greet() {
-                let name = document.querySelector('#name').value;
-                alert(`hello, ${name}`);
-            }
-
             document.addEventListener('DOMContentLoaded', () => {
-                document.querySelector('form').addEventListener('submit', greet)
+                document.querySelector('form').addEventListener('submit', () => {
+                    let name = document.querySelector('#name').value;
+                    alert(`hello, ${name}`);
+                }))
             });
         </script>
         <title>
