@@ -7,7 +7,10 @@
                 let name = document.querySelector('#name').value;
                 alert(`hello, ${name}`);
             }
-            document.addEventListener('DOMContentLoaded', () => document.querySelector('form').addEventListener('submit', greet));
+
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('form').addEventListener('submit', greet)
+            });
         </script>
         <title>
             hello, title
