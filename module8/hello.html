@@ -3,7 +3,11 @@
 <html lang="pt-br">
     <head>
         <script>
-            document.querySelector('form').addEventListener('submit');
+            function greet() {
+                let name = document.querySelector('id').value;
+                alert(`hello, ${name}`);
+            }
+            document.querySelector('form').addEventListener('submit', greet());
         </script>
         <title>
             hello, title
