@@ -8,4 +8,4 @@ def index():
 
 @app.route("/greet")
 def greet():
-    return render_template("greet.html", first_name=request.args.get("first_name", "world"))
+    return render_template("greet.html", first_name=request.args.get("first_name", "World"))
