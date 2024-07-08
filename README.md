@@ -7,7 +7,7 @@
 - modulo 5 - Estrutura de Dados ✅
 - modulo 6 - Python ✅
 - modulo 7 - SQL ✅
-- modulo 8 - HTML, CSS e Javascript
+- modulo 8 - HTML, CSS e Javascript ✅
 - modulo 9 - Flask
 - modulo 10 - Éticals
 
