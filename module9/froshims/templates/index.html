@@ -5,8 +5,7 @@
     <form action="/register" method="post">
         <input autocomplete="off" autofocus placeholder="Name" name="name" type="text">
             {% for sport in sports %}
-                <br>
-                <input name"sport" type="radio" value="{{ sport }}"> {{ sport }}
+                <input name="sport" type="radio" value="{{ sport }}"> {{ sport }}
             {% endfor %}
         <input type="submit" value="Register">
     </form>
