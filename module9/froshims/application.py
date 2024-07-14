@@ -28,5 +28,6 @@ def register():
         return render_template("error.html", message="Invalid sport")
 
     REGISTRANTS[name] = sport
+    print(REGISTRANTS)
 
     return render_template("success.html")
