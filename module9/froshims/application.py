@@ -30,4 +30,4 @@ def register():
     REGISTRANTS[name] = sport
     print(REGISTRANTS)
 
-    return render_template("registrants.html")
+    return render_template("registrants.html", registrants=REGISTRANTS)
