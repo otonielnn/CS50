@@ -40,6 +40,8 @@ def register():
 
     db.execute("INSERT INTO registrants (name, sport) VALUES(?, ?)", name, sport)
 
+    message = Message(f"You are registered in {sport}!")
+
     return redirect("/registrants")
 
 @app.route("/registrants")
