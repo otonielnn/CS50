@@ -41,7 +41,7 @@ def register():
 
 #    db.execute("INSERT INTO registrants (email, sport) VALUES(?, ?)", email, sport)
 
-    message = Message(f"You are registered in {sport}!", recipients=[email])
+    message = Message(f"You are registered!", recipients=[email])
     mail.send(message)
 
     return redirect("/registrants")
