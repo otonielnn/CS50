@@ -29,7 +29,7 @@ def index():
         if not day:
             return render_template("error.html", message="Missing Day")
 
-        db.execute("INSERT INTO birthdays VALUES (?, ?, ?);", name, month, day)
+        db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?);", name, month, day)
 
         return redirect("/")
 
