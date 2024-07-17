@@ -27,4 +27,4 @@ def cart():
         return redirect("/cart")
 
     books = db.execute("SELECT * FROM books WHERE id IN (?)", session["cart"])
-    return render_tempalte("cart.html", books=books)
+    return render_template("cart.html", books=books)
