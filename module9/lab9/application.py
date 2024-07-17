@@ -17,6 +17,18 @@ def index():
     if request.method == "POST":
 
         # TODO: Add the user's entry into the database
+        name = request.form.get("name")
+        if not name:
+            return render_template("error.html", message="Missing Name")
+
+        month = request.form.get("month")
+        if not month:
+            return render_template("error.html", message="Missing Month")
+
+        day = request.form.get("day")
+        if not day:
+            return render_template("error.html", message="Missing Day")
+
         db.execute("INSERT INTO birthdays VALUES (?, ?, ?);", name, month, day)
 
         return redirect("/")
