@@ -19,3 +19,12 @@ def index():
 def cart():
     if "cart" not in session:
         session["cart"] = []
+
+    if request.method == "POST":
+        id = request.form.get("id")
+        if id:
+            session["cart"].append(id)
+        return redirect("/cart")
+
+    books = db.execute("SELECT * FROM books WHERE id IN (?)", session["cart"])
+    return render_tempalte("cart.html", books=books)
