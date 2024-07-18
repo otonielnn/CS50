@@ -9,5 +9,4 @@
 - modulo 7 - SQL ✅
 - modulo 8 - HTML, CSS e Javascript ✅
 - modulo 9 - Flask ✅
-- modulo 10 - Ética
-
+- modulo 10 - Ética ✅
